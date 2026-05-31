@@ -1,22 +1,15 @@
-import { useState } from 'react'
 import './App.css'
+import MovieCard from './components/MovieCard'
+import Home from './pages/Home'
 
 function App() {
-  return (
-  <>
-  <div>
-    <p>Hello</p>
-  </div>
-  <Text display_text={"hey"}/>
-  <Text display_text={"whats up"}/>
-  <Text display_text={"hello"}/>
-  </>)
-}
+  const movieNumber = 2;
 
-function Text({display_text}) {
-  return (<div>
-            <p>{display_text}</p>
-          </div>)
+
+
+  return (<> 
+ <Home/>
+  </>)
 }
 
 export default App
