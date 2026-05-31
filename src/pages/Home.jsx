@@ -1,39 +1,48 @@
+import '../css/Home.css'
 import MovieCard from "../components/MovieCard"
-import { useState } from "react"
+
+import { useState, useEffect } from "react"
+import { searchMovies, getPopularMovies } from '../services/api'
 
 function Home() {
-    const movies = [
-        {
-            id: 1,
-            title: "John Wick 3",
-            release_date: "2024-04-32",
-            url: "https://example.com/john-wick-3"
-        },
-        {
-            id: 2,
-            title: "Dune",
-            release_date: "2024-02-28",
-            url: "https://example.com/dune"
-        },
-        {
-            id: 3,
-            title: "Oppenheimer",
-            release_date: "2023-07-21",
-            url: "https://example.com/oppenheimer"
-        },
-        {
-            id: 4,
-            title: "Inception",
-            release_date: "2010-07-16",
-            url: "https://example.com/inception"
-        }
-    ]
     const [searchQuery, setSearchQuery] = useState("");
+    const [movies, setMovies] = useState([])
+    const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(true)
 
-    const handleSearch = (e) => {
+    useEffect(() => {
+        const loadPopularMovies = async () => {
+            try {
+                const popularMovies = await getPopularMovies()
+                setMovies(popularMovies)
+            }catch (err) {
+                setError("Failed to load movies...")
+                console.log(err)                
+            }finally{
+                setLoading(false)
+            }
+        }
+
+        loadPopularMovies()
+    }, [])
+
+    const handleSearch = async (e) => {
         e.preventDefault() 
-        alert(searchQuery)
-        setSearchQuery("")
+        if (!searchQuery.trim()) return
+        if (loading) return
+
+        setLoading(true)
+
+        try {
+            const searchResults = await searchMovies(searchQuery)
+            setMovies(searchResults)
+            setError(null)
+        }catch (err) {
+            console.log(err)
+            setError("Failed to search movies...")
+        }finally {
+            setLoading(false)
+        }
     }
 
 
@@ -47,13 +56,13 @@ function Home() {
             >
 
             </input>
-            <button type="submit" className="search-btn">Search</button>
+            <button type="submit" className="search-button">Search</button>
         </form>
+        {error && <div className='error-message'>{error}</div> }
+        {loading ? <div className="loading">Loading...</div>:
         <div className="movies-grid">
-            {movies.map(movie => (movie.title.toLowerCase().
-                startsWith(searchQuery) && 
-                    <MovieCard movie={movie} key={movie.id} />))}
-        </div>
+            {movies.map(movie => (<MovieCard movie={movie} key={movie.id} />))}
+        </div>}
     </div>)
 }
 
