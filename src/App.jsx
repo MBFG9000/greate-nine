@@ -7,15 +7,15 @@ function App() {
   <div>
     <p>Hello</p>
   </div>
-  <Text/>
-  <Text/>
-  <Text/>
+  <Text display_text={"hey"}/>
+  <Text display_text={"whats up"}/>
+  <Text display_text={"hello"}/>
   </>)
 }
 
-function Text() {
+function Text({display_text}) {
   return (<div>
-            <p>Hello World</p>
+            <p>{display_text}</p>
           </div>)
 }
 
