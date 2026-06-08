@@ -1,15 +1,21 @@
 import "../css/Home.css"
 
 import {
+    BadgeCheck,
     Building,
     Building2,
     ChevronLeft,
     ChevronRight,
     ClipboardCheck,
+    FileCheck2,
+    Hammer,
     House,
+    KeyRound,
     Layers,
     MapPin,
     MessageSquareText,
+    PencilRuler,
+    SearchCheck,
     ShieldCheck,
     TimerReset,
 } from "lucide-react"
@@ -179,6 +185,57 @@ const videoTestimonials = [
         text: "Для нас было важно не останавливать бизнес-план из-за стройки. Подрядчик координировал площадку, поставки и качество работ без хаоса в коммуникации.",
         address: "Астана, коммерческий объект",
         video: "/great-nine-construction-project-showcase.mp4",
+    },
+]
+
+const constructionProcess = [
+    {
+        step: "01",
+        title: "Предварительная консультация",
+        description:
+            "Изучаем ваши задачи, особенности участка и пожелания → определяем основные параметры будущего проекта.",
+        checkpoint: "",
+        Icon: SearchCheck,
+    },
+    {
+        step: "02",
+        title: "Разработка проекта",
+        description:
+            "Создаем архитектурные и инженерные решения → согласовываем концепцию и план реализации.",
+        checkpoint: "Согласование проектной документации",
+        Icon: PencilRuler,
+    },
+    {
+        step: "03",
+        title: "Подготовка сметы и заключение договора",
+        description:
+            "Формируем детальный расчет стоимости → фиксируем бюджет, сроки и условия сотрудничества.",
+        checkpoint: "Утверждение бюджета и сроков",
+        Icon: FileCheck2,
+    },
+    {
+        step: "04",
+        title: "Выполнение строительных работ",
+        description:
+            "Реализуем проект согласно графику → предоставляем регулярные фото- и видеоотчеты о ходе работ.",
+        checkpoint: "Промежуточная приемка выполненных работ",
+        Icon: Hammer,
+    },
+    {
+        step: "05",
+        title: "Технический контроль качества",
+        description:
+            "Проводим проверки на каждом этапе строительства → обеспечиваем соответствие стандартам и проектной документации.",
+        checkpoint: "Подтверждение качества работ",
+        Icon: BadgeCheck,
+    },
+    {
+        step: "06",
+        title: "Завершение проекта и передача объекта",
+        description:
+            "Проводим итоговую проверку → передаем объект, документацию и гарантийные обязательства.",
+        checkpoint: "Финальная сдача объекта",
+        Icon: KeyRound,
     },
 ]
 
@@ -767,7 +824,33 @@ function Home() {
                     </div>
                 </div>
             </section>
-{/* 
+
+            <section className="construction-process-section reveal-section" ref={registerRevealSection}>
+                <div className="construction-process-shell">
+                    <h2 className="construction-process-title reveal-item">
+                        Прозрачный процесс строительства с контрольными этапами
+                    </h2>
+                    <div className="construction-process-path">
+                        {constructionProcess.map((item) => (
+                            <article className="construction-process-step reveal-item" key={item.step}>
+                                <div className="construction-process-marker">
+                                    <span>{item.step}</span>
+                                    <item.Icon aria-hidden="true" strokeWidth={1.9} />
+                                </div>
+                                <div className="construction-process-content">
+                                    <h3>{item.title}</h3>
+                                    {item.checkpoint && <p className="construction-process-label">Контрольный этап</p>}
+                                    <p>{item.description}</p>
+                                    {item.checkpoint && (
+                                        <strong className="construction-process-checkpoint">{item.checkpoint}</strong>
+                                    )}
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             <section className="team-section reveal-section" id="team" ref={registerRevealSection}>
                 <div className="section-shell">
                     <p className="section-kicker reveal-item">Команда</p>
@@ -790,9 +873,9 @@ function Home() {
                         </article>
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className="contact-section reveal-section" id="contact" ref={registerRevealSection}>
+            <section className="contact-section reveal-section" id="contact" ref={registerRevealSection}>
                 <div className="contact-shell">
                     <p className="contact-kicker reveal-item">Свяжитесь с нами</p>
                     <h2 className="contact-title reveal-item">Начните проект сегодня</h2>
@@ -823,7 +906,7 @@ function Home() {
                         </a>
                     </div>
                 </div>
-            </section> */}
+            </section>
         </section>
     )
 }

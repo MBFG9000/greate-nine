@@ -810,7 +810,7 @@
   z-index: 4;
   display: inline-flex;
   align-items: center;
-  margin: 10px;
+  margin: clamp(10px, 1.2vw, 18px);
   justify-content: center;
   width: clamp(68px, 6.2vw, 92px);
   height: clamp(68px, 6.2vw, 92px);
@@ -943,6 +943,118 @@
   background: #111c1c;
   border: 0;
   border-radius: 0;
+}
+
+.construction-process-section {
+  background: #fff8ee;
+  content-visibility: auto;
+  contain-intrinsic-size: 860px;
+}
+
+.construction-process-shell {
+  width: min(1440px, 100% - clamp(32px, 7vw, 120px));
+  margin: 0 auto;
+  padding: clamp(54px, 7vw, 92px) 0 clamp(64px, 8vw, 108px);
+}
+
+.construction-process-title {
+  max-width: 940px;
+  margin: 0 auto clamp(38px, 5vw, 58px);
+  color: #111c1c;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.construction-process-path {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 28px);
+}
+
+.construction-process-path::before {
+  position: absolute;
+  top: 45px;
+  right: 8%;
+  left: 8%;
+  height: 2px;
+  content: "";
+  background: linear-gradient(90deg, rgba(255, 111, 34, 0.12), rgba(255, 111, 34, 0.78), rgba(255, 111, 34, 0.12));
+}
+
+.construction-process-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  min-height: 260px;
+  padding: clamp(20px, 2.4vw, 28px);
+  border: 1px solid rgba(17, 28, 28, 0.1);
+  background: #ffffff;
+}
+
+.construction-process-marker {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 82px;
+  height: 82px;
+  border-radius: 8px;
+  color: #111c1c;
+  background: #f8f1e4;
+}
+
+.construction-process-marker span {
+  color: #ff6f22;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.construction-process-marker svg,
+.construction-process-marker .lucide {
+  width: 31px;
+  height: 31px;
+}
+
+.construction-process-content h3 {
+  margin: 0 0 10px;
+  color: #111c1c;
+  font-size: clamp(1.05rem, 1.45vw, 1.22rem);
+  font-weight: 800;
+  line-height: 1.24;
+}
+
+.construction-process-content p {
+  margin: 0;
+  color: rgba(17, 28, 28, 0.72);
+  font-size: clamp(0.92rem, 1.1vw, 1rem);
+  font-weight: 600;
+  line-height: 1.62;
+}
+
+.construction-process-content .construction-process-label {
+  display: inline-flex;
+  margin: 0 0 12px;
+  color: #ff6f22;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.construction-process-checkpoint {
+  display: block;
+  margin-top: 16px;
+  color: #111c1c;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.35;
 }
 
 .team-section {
@@ -1133,6 +1245,14 @@
     grid-template-columns: 1fr;
   }
 
+  .construction-process-path {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .construction-process-path::before {
+    display: none;
+  }
+
   .video-testimonial-slide {
     grid-template-columns: minmax(0, 0.78fr) minmax(380px, 1.22fr);
   }
@@ -1263,6 +1383,42 @@
 
   .video-testimonial-slide video {
     min-height: 0;
+  }
+
+  .construction-process-section {
+    contain-intrinsic-size: 1180px;
+  }
+
+  .construction-process-shell {
+    width: min(100% - 28px, 540px);
+    padding: 52px 0 62px;
+  }
+
+  .construction-process-title {
+    margin-bottom: 28px;
+  }
+
+  .construction-process-path {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .construction-process-step {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 14px;
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .construction-process-marker {
+    width: 58px;
+    height: 58px;
+  }
+
+  .construction-process-marker svg,
+  .construction-process-marker .lucide {
+    width: 24px;
+    height: 24px;
   }
 
   .services-grid {
