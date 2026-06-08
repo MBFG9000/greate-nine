@@ -24,7 +24,11 @@ function NavBar() {
 
         const target = document.getElementById(id)
         if (target) {
-            target.scrollIntoView({ behavior: "smooth", block: "start" })
+            const header = document.querySelector(".site-header")
+            const headerOffset = (header?.getBoundingClientRect().height || 56) + 10
+            const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset
+
+            window.scrollTo({ top: targetTop, behavior: "smooth" })
             window.history.pushState(null, "", `#${id}`)
         }
         setIsMenuOpen(false)

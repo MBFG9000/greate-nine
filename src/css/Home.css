@@ -480,8 +480,6 @@
 
 .services-section {
   background: #f8f1e4;
-  content-visibility: auto;
-  contain-intrinsic-size: 900px;
 }
 
 .services-shell {
@@ -578,8 +576,6 @@
 .advantages-section {
   background: #f8f1e4;
   color: #111c1c;
-  content-visibility: auto;
-  contain-intrinsic-size: 560px;
 }
 
 .advantages-shell {
@@ -655,8 +651,6 @@
   height: clamp(220px, 33vh, 360px);
   overflow: hidden;
   background: #111c1c;
-  content-visibility: auto;
-  contain-intrinsic-size: 320px;
 }
 
 .process-video-section::after {
@@ -678,8 +672,6 @@
 
 .projects-section {
   background: #f8f1e4;
-  content-visibility: auto;
-  contain-intrinsic-size: 900px;
 }
 
 .projects-shell {
@@ -772,8 +764,6 @@
 
 .video-testimonials-section {
   background: #f8f1e4;
-  content-visibility: auto;
-  contain-intrinsic-size: 740px;
 }
 
 .video-testimonials-shell {
@@ -947,8 +937,6 @@
 
 .construction-process-section {
   background: #f8f1e4;
-  content-visibility: auto;
-  contain-intrinsic-size: 1180px;
 }
 
 .construction-process-shell {
@@ -1074,8 +1062,6 @@
 
 .assurance-section {
   background: #f8f1e4;
-  content-visibility: auto;
-  contain-intrinsic-size: 980px;
 }
 
 .assurance-shell {
@@ -1207,8 +1193,6 @@
 
 .team-section {
   background: #f8f1e4;
-  content-visibility: auto;
-  contain-intrinsic-size: 760px;
 }
 
 .team-shell {
@@ -1314,8 +1298,6 @@
   align-items: center;
   min-height: 56vh;
   background: #111c1c;
-  content-visibility: auto;
-  contain-intrinsic-size: 620px;
 }
 
 .contact-shell {
@@ -1631,10 +1613,6 @@
 
   .video-testimonial-slide video {
     min-height: 0;
-  }
-
-  .construction-process-section {
-    contain-intrinsic-size: 1180px;
   }
 
   .construction-process-shell {
