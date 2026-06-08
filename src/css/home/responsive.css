@@ -1,0 +1,362 @@
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    max-width: 85%;
+  }
+
+  .statistics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-grid,
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-card {
+    min-height: 260px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    min-height: 0;
+  }
+
+  .service-card {
+    min-height: 400px;
+  }
+
+  .service-card-wide {
+    grid-column: span 2;
+  }
+
+  .service-card-tall {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .advantages-list {
+    grid-template-columns: 1fr;
+  }
+
+  .construction-process-shell {
+    width: min(920px, 100% - 32px);
+  }
+
+  .construction-process-step {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 18px;
+    min-height: 0;
+    padding-bottom: 18px;
+  }
+
+  .construction-process-path::before {
+    left: 38px;
+  }
+
+  .construction-process-marker {
+    grid-column: 1;
+    width: 76px;
+    height: 76px;
+    border-width: 6px;
+  }
+
+  .construction-process-content,
+  .construction-process-step:nth-child(even) .construction-process-content {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .team-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .assurance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .assurance-card {
+    min-height: 0;
+  }
+
+  .certificates-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .video-testimonial-slide {
+    grid-template-columns: minmax(0, 0.78fr) minmax(380px, 1.22fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .about-shell {
+    width: min(100% - 28px, 540px);
+    padding: 58px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .about-content {
+    max-width: none;
+  }
+
+  .about-image {
+    aspect-ratio: 1.36 / 1;
+  }
+
+  .statistics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    min-height: 230px;
+  }
+
+  .projects-grid,
+  .team-grid,
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .process-video-section {
+    height: 30vh;
+    min-height: 190px;
+  }
+
+  .projects-shell {
+    width: 100%;
+    padding-top: 42px;
+  }
+
+  .projects-title {
+    width: min(100% - 28px, 540px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .projects-grid {
+    gap: 0;
+  }
+
+  .project-card {
+    min-height: 285px;
+  }
+
+  .video-testimonials-shell {
+    width: min(100% - 28px, 540px);
+    padding-top: 24px;
+  }
+
+  .video-testimonials-header {
+    margin-bottom: 24px;
+  }
+
+  .video-testimonials-stage {
+    display: block;
+    padding: 0;
+  }
+
+  .video-testimonials-control {
+    width: 58px;
+    height: 58px;
+    box-shadow: 0 12px 28px rgba(255, 111, 34, 0.28);
+  }
+
+  .video-testimonials-stage > .video-testimonials-control {
+    display: none;
+  }
+
+  .video-testimonials-control svg,
+  .video-testimonials-control .lucide {
+    width: 30px;
+    height: 30px;
+  }
+
+  .video-testimonials-slider {
+    gap: 18px;
+  }
+
+  .video-testimonials-mobile-controls {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .video-testimonials-mobile-controls .video-testimonials-control {
+    position: static;
+    transform: none;
+  }
+
+  .video-testimonials-mobile-controls .video-testimonials-control:hover {
+    transform: translateY(-2px);
+  }
+
+  .video-testimonial-slide {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    align-items: start;
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .video-testimonial-copy {
+    max-width: none;
+  }
+
+  .video-testimonial-slide video {
+    min-height: 0;
+  }
+
+  .construction-process-shell {
+    width: min(100% - 28px, 540px);
+    padding: 34px 0 62px;
+  }
+
+  .construction-process-title {
+    margin-bottom: 28px;
+  }
+
+  .construction-process-path {
+    gap: 14px;
+  }
+
+  .construction-process-path::before {
+    left: 29px;
+  }
+
+  .construction-process-step {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 14px;
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .construction-process-marker {
+    width: 58px;
+    height: 58px;
+    border-width: 5px;
+  }
+
+  .construction-process-marker svg,
+  .construction-process-marker .lucide {
+    width: 24px;
+    height: 24px;
+  }
+
+  .assurance-shell {
+    width: min(100% - 28px, 540px);
+    padding: 34px 0 62px;
+  }
+
+  .assurance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .assurance-card {
+    padding: 18px;
+  }
+
+  .certificates-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .team-shell {
+    width: min(100% - 28px, 540px);
+    padding: 34px 0 62px;
+  }
+
+  .team-feature {
+    padding: 18px;
+  }
+
+  .team-feature img {
+    aspect-ratio: 1.3 / 1;
+  }
+
+  .team-card {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 14px;
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .team-card img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .service-card,
+  .service-card-wide,
+  .service-card-tall {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 380px;
+  }
+
+  .services-shell {
+    width: 100%;
+  }
+
+  .services-shell .section-title {
+    width: min(100% - 28px, 540px);
+  }
+
+  .advantages-shell {
+    width: min(100% - 28px, 540px);
+  }
+
+  .advantage-item {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 14px;
+    min-height: 0;
+  }
+
+  .advantage-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .advantage-icon svg,
+  .advantage-icon .lucide {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-enabled .reveal-section .reveal-item,
+  .js-enabled .process-video-section.reveal-section,
+  .about-content,
+  .about-image,
+  .statistics-kicker,
+  .statistics-title,
+  .stat-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}

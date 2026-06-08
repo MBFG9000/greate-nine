@@ -1,0 +1,71 @@
+.advantages-section {
+  background: var(--color-page);
+  color: var(--color-ink);
+}
+
+.advantages-shell {
+  width: min(1440px, 100% - clamp(32px, 7vw, 120px));
+  margin: 0 auto;
+  padding: 0 0 clamp(46px, 5.8vw, 72px);
+}
+
+.advantages-title {
+  max-width: 840px;
+  margin: 0 auto;
+  color: var(--color-ink);
+  text-align: center;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.advantages-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 32px);
+  margin-top: clamp(28px, 3.8vw, 42px);
+}
+
+.advantage-item {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  min-height: 150px;
+  padding: clamp(20px, 2.5vw, 28px);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.advantage-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-md);
+  color: var(--color-ink);
+  background: var(--color-white);
+}
+
+.advantage-icon svg,
+.advantage-icon .lucide {
+  width: 28px;
+  height: 28px;
+}
+
+.advantage-content h3 {
+  margin: 0 0 8px;
+  color: var(--color-ink);
+  font-size: clamp(1rem, 1.45vw, 1.16rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.advantage-content p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.65;
+}
+

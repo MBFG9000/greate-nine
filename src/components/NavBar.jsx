@@ -2,6 +2,15 @@ import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 import "../css/Navbar.css"
 
+const navItems = [
+    { id: "home", label: "Главная" },
+    { id: "about", label: "О нас" },
+    { id: "services", label: "Услуги" },
+    { id: "projects", label: "Проекты" },
+    { id: "team", label: "Команда" },
+    { id: "contact", label: "Контакты" },
+]
+
 function NavBar() {
     const [isSticky, setIsSticky] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -57,36 +66,13 @@ function NavBar() {
             </button>
             <nav id="site-navigation" aria-label="Основная навигация">
                 <ul>
-                    <li>
-                        <a href="#home" onClick={(event) => scrollTo(event, "home")}>
-                            <span className="nav-text">Главная</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#about" onClick={(event) => scrollTo(event, "about")}>
-                            <span className="nav-text">О нас</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#services" onClick={(event) => scrollTo(event, "services")}>
-                            <span className="nav-text">Услуги</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#projects" onClick={(event) => scrollTo(event, "projects")}>
-                            <span className="nav-text">Проекты</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#team" onClick={(event) => scrollTo(event, "team")}>
-                            <span className="nav-text">Команда</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#contact" onClick={(event) => scrollTo(event, "contact")}>
-                            <span className="nav-text">Контакты</span>
-                        </a>
-                    </li>
+                    {navItems.map((item) => (
+                        <li key={item.id}>
+                            <a href={`#${item.id}`} onClick={(event) => scrollTo(event, item.id)}>
+                                <span className="nav-text">{item.label}</span>
+                            </a>
+                        </li>
+                    ))}
                 </ul>
             </nav>
             <div className="btn-header">

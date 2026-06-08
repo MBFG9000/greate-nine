@@ -1,0 +1,129 @@
+.construction-process-section {
+  position: relative;
+  background:
+    linear-gradient(rgba(17, 28, 28, 0.48), rgba(17, 28, 28, 0.56)),
+    url("/great-nine-mountain-home-almaty.webp") center / cover no-repeat;
+}
+
+.construction-process-shell {
+  position: relative;
+  width: min(1180px, 100% - clamp(32px, 7vw, 120px));
+  margin: 0 auto;
+  padding: clamp(26px, 4vw, 52px) 0 clamp(64px, 8vw, 108px);
+}
+
+.construction-process-title {
+  max-width: 940px;
+  margin: 0 auto clamp(38px, 5vw, 58px);
+  color: var(--color-white);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.construction-process-path {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.construction-process-path::before {
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 50%;
+  width: 2px;
+  content: "";
+  background: linear-gradient(180deg, rgba(255, 111, 34, 0.12), rgba(255, 111, 34, 0.82), rgba(255, 111, 34, 0.12));
+  transform: translateX(-50%);
+}
+
+.construction-process-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 96px minmax(0, 1fr);
+  gap: clamp(22px, 3vw, 42px);
+  align-items: center;
+  min-height: 190px;
+}
+
+.construction-process-marker {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  justify-self: center;
+  width: 96px;
+  height: 96px;
+  border: 8px solid var(--color-page);
+  border-radius: var(--radius-md);
+  color: var(--color-ink);
+  background: var(--color-white);
+  box-shadow: 0 16px 34px rgba(17, 28, 28, 0.08);
+}
+
+.construction-process-marker span {
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.construction-process-marker svg,
+.construction-process-marker .lucide {
+  width: 34px;
+  height: 34px;
+}
+
+.construction-process-content {
+  grid-column: 3;
+  padding: clamp(20px, 2.4vw, 28px);
+  border: 1px solid var(--color-border-faint);
+  background: var(--color-white);
+}
+
+.construction-process-step:nth-child(even) .construction-process-content {
+  grid-column: 1;
+  text-align: right;
+}
+
+.construction-process-content h3 {
+  margin: 0 0 10px;
+  color: var(--color-ink);
+  font-size: clamp(1.05rem, 1.45vw, 1.22rem);
+  font-weight: 800;
+  line-height: 1.24;
+}
+
+.construction-process-content p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: clamp(0.92rem, 1.1vw, 1rem);
+  font-weight: 600;
+  line-height: 1.62;
+}
+
+.construction-process-content .construction-process-label {
+  display: inline-flex;
+  margin: 0 0 12px;
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.construction-process-checkpoint {
+  display: block;
+  margin-top: 16px;
+  color: var(--color-ink);
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+

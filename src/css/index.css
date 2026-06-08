@@ -1,9 +1,31 @@
 :root {
+  --color-page: #f8f1e4;
+  --color-ink: #111c1c;
+  --color-body: #1f1f1f;
+  --color-heading: #1b1409;
+  --color-white: #ffffff;
+  --color-cream: #fff7eb;
+  --color-accent: #ff6f22;
+  --color-accent-deep: #f06523;
+  --color-text-muted: rgba(17, 28, 28, 0.72);
+  --color-border-subtle: rgba(17, 28, 28, 0.12);
+  --color-border-soft: rgba(17, 28, 28, 0.14);
+  --color-border-faint: rgba(17, 28, 28, 0.1);
+  --color-white-muted: rgba(255, 255, 255, 0.74);
+  --color-cream-muted: rgba(255, 248, 235, 0.88);
+  --gradient-primary: linear-gradient(135deg, #c78a2a 0%, #8b5a10 100%);
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+  --shadow-primary: 0 18px 30px rgba(128, 85, 20, 0.35);
+  --shadow-primary-hover: 0 24px 40px rgba(156, 105, 25, 0.4);
+
   font-family: "Manrope", "Segoe UI", Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #1f1f1f;
-  background-color: #f8f1e4;
+  color: var(--color-body);
+  background-color: var(--color-page);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,7 +40,7 @@
 
 html, body {
   overflow-x: hidden;
-  background-color: #f8f1e4;
+  background-color: var(--color-page);
 }
 
 html {

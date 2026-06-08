@@ -1,0 +1,95 @@
+.services-section {
+  background: var(--color-page);
+}
+
+.services-shell {
+  width: min(1440px, 100% - clamp(32px, 7vw, 120px));
+  padding: clamp(24px, 3.4vw, 42px) 0 clamp(46px, 5.8vw, 72px);
+  text-align: center;
+}
+
+.services-shell .section-title {
+  max-width: 840px;
+  margin: 0 auto;
+  color: var(--color-ink);
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(280px, 0.95fr);
+  grid-template-rows: minmax(300px, 0.88fr) minmax(390px, 1.12fr);
+  gap: clamp(8px, 1.4vw, 18px);
+  width: 100%;
+  min-height: 690px;
+  margin-top: clamp(28px, 3.8vw, 42px);
+}
+
+.service-card {
+  position: relative;
+  isolation: isolate;
+  min-height: 100%;
+  overflow: hidden;
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.service-card-wide {
+  grid-column: span 2;
+}
+
+.service-card-tall {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.service-card img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.service-card::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background:
+    linear-gradient(to top, rgba(8, 10, 8, 0.78), rgba(8, 10, 8, 0.26) 56%, rgba(8, 10, 8, 0.08)),
+    linear-gradient(to right, rgba(8, 10, 8, 0.48), rgba(8, 10, 8, 0));
+}
+
+.service-content {
+  position: absolute;
+  left: clamp(20px, 3vw, 34px);
+  right: clamp(20px, 3vw, 34px);
+  bottom: clamp(20px, 3vw, 32px);
+  max-width: 460px;
+}
+
+.service-card h3 {
+  margin: 0 0 10px;
+  color: var(--color-white);
+  font-size: clamp(1.35rem, 2.6vw, 2.15rem);
+  line-height: 1.12;
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--color-cream-muted);
+  font-size: clamp(0.95rem, 1.35vw, 1.05rem);
+  line-height: 1.65;
+}
+
+.service-card:hover img {
+  filter: saturate(1.08) contrast(1.04);
+  transform: scale(1.055);
+}
+
