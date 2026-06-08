@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 import { Menu, X } from "lucide-react"
 import "../css/Navbar.css"
 
@@ -20,10 +19,13 @@ function NavBar() {
         }
     }, [])
 
-    const scrollTo = (id) => {
+    const scrollTo = (event, id) => {
+        event.preventDefault()
+
         const target = document.getElementById(id)
         if (target) {
             target.scrollIntoView({ behavior: "smooth", block: "start" })
+            window.history.pushState(null, "", `#${id}`)
         }
         setIsMenuOpen(false)
     }
@@ -31,13 +33,13 @@ function NavBar() {
     return (
         <header className={`site-header${isSticky ? " is-sticky" : ""}${isMenuOpen ? " is-menu-open" : ""}`}>
             <div className="logo">
-                <Link to="/" aria-label="Great Nine Construction" onClick={() => setIsMenuOpen(false)}>
+                <a href="#home" aria-label="Great Nine Construction" onClick={(event) => scrollTo(event, "home")}>
                     <img
                         className="logo-svg"
                         src="/great-nine-logo.png"
                         alt="Логотип Great Nine Construction"
                     />
-                </Link>
+                </a>
             </div>
             <button
                 className="menu-toggle"
@@ -52,39 +54,39 @@ function NavBar() {
             <nav id="site-navigation" aria-label="Основная навигация">
                 <ul>
                     <li>
-                        <Link to="/" onClick={() => setIsMenuOpen(false)}>
+                        <a href="#home" onClick={(event) => scrollTo(event, "home")}>
                             <span className="nav-text">Главная</span>
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link to="/" onClick={() => scrollTo("about")}>
+                        <a href="#about" onClick={(event) => scrollTo(event, "about")}>
                             <span className="nav-text">О нас</span>
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link to="/" onClick={() => scrollTo("services")}>
+                        <a href="#services" onClick={(event) => scrollTo(event, "services")}>
                             <span className="nav-text">Услуги</span>
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link to="/" onClick={() => scrollTo("projects")}>
+                        <a href="#projects" onClick={(event) => scrollTo(event, "projects")}>
                             <span className="nav-text">Проекты</span>
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link to="/" onClick={() => scrollTo("team")}>
+                        <a href="#team" onClick={(event) => scrollTo(event, "team")}>
                             <span className="nav-text">Команда</span>
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link to="/" onClick={() => scrollTo("contact")}>
+                        <a href="#contact" onClick={(event) => scrollTo(event, "contact")}>
                             <span className="nav-text">Контакты</span>
-                        </Link>
+                        </a>
                     </li>
                 </ul>
             </nav>
             <div className="btn-header">
-                <button type="button" onClick={() => scrollTo("contact")}>Связаться</button>
+                <button type="button" onClick={(event) => scrollTo(event, "contact")}>Связаться</button>
             </div>
         </header>
     )

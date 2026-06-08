@@ -239,6 +239,79 @@ const constructionProcess = [
     },
 ]
 
+const assuranceCards = [
+    {
+        title: "Лицензии и разрешения",
+        Icon: FileCheck2,
+        items: [
+            "Действующие лицензии Республики Казахстан на проектирование и строительство.",
+            "Полный пакет разрешительной документации и допусков для выполнения профильных работ.",
+            "Сотрудничество с проверенными подрядными организациями и поставщиками материалов.",
+        ],
+    },
+    {
+        title: "Финансовые гарантии",
+        Icon: ClipboardCheck,
+        items: [
+            "Фиксированная стоимость работ закрепляется в договоре.",
+            "Прозрачная смета без скрытых расходов и непредвиденных доплат.",
+            "Четко прописанные сроки, объемы работ и ответственность сторон.",
+        ],
+    },
+    {
+        title: "Контроль качества",
+        Icon: ShieldCheck,
+        items: [
+            "Технический надзор на всех ключевых этапах строительства.",
+            "Авторский контроль соответствия проектным решениям.",
+            "Проверка качества материалов и соблюдения строительных технологий.",
+            "Поэтапная приемка выполненных работ с устранением замечаний до сдачи объекта.",
+        ],
+    },
+    {
+        title: "Гарантийные обязательства",
+        Icon: BadgeCheck,
+        items: [
+            "Гарантия до 5 лет на несущие и конструктивные элементы.",
+            "Гарантия до 3 лет на инженерные системы и коммуникации.",
+            "Сопровождение объекта после завершения строительства.",
+        ],
+    },
+]
+
+const certificateSlides = [
+    {
+        title: "Лицензии на строительство",
+        image: "/great-nine-construction-certificates-placeholder.png",
+        alt: "Место для лицензий и сертификатов Great Nine Construction",
+    },
+    {
+        title: "Разрешительная документация",
+        image: "/great-nine-construction-certificates-placeholder.png",
+        alt: "Место для разрешительной документации Great Nine Construction",
+    },
+    {
+        title: "Сертификаты качества",
+        image: "/great-nine-construction-certificates-placeholder.png",
+        alt: "Место для сертификатов качества Great Nine Construction",
+    },
+    {
+        title: "Допуски к строительным работам",
+        image: "/great-nine-construction-certificates-placeholder.png",
+        alt: "Место для допусков к строительным работам Great Nine Construction",
+    },
+    {
+        title: "Сертификаты материалов",
+        image: "/great-nine-construction-certificates-placeholder.png",
+        alt: "Место для сертификатов материалов Great Nine Construction",
+    },
+    {
+        title: "Документы технического надзора",
+        image: "/great-nine-construction-certificates-placeholder.png",
+        alt: "Место для документов технического надзора Great Nine Construction",
+    },
+]
+
 function Home() {
     const [heroVideoReady, setHeroVideoReady] = useState(false)
     const [shouldLoadHeroVideo, setShouldLoadHeroVideo] = useState(false)
@@ -551,7 +624,7 @@ function Home() {
     }, [statisticsVisible])
 
     return (
-        <section className="home-hero-section">
+        <section className="home-hero-section" id="home">
             <div className={`hero-media-wrapper${heroVideoReady ? " is-video-loaded" : ""}`}>
                 <img
                     src="/great-nine-construction-hero.webp"
@@ -851,25 +924,112 @@ function Home() {
                 </div>
             </section>
 
+            <section className="assurance-section reveal-section" ref={registerRevealSection}>
+                <div className="assurance-shell">
+                    <div className="assurance-header reveal-item">
+                        <h2>Гарантии, разрешительная документация и контроль качества</h2>
+                        <p>
+                            Все работы выполняются в соответствии с нормативными требованиями и проходят
+                            многоступенчатый контроль на каждом этапе реализации проекта.
+                        </p>
+                    </div>
+                    <div className="assurance-grid">
+                        {assuranceCards.map((card) => (
+                            <article className="assurance-card reveal-item" key={card.title}>
+                                <span className="assurance-card-icon">
+                                    <card.Icon aria-hidden="true" strokeWidth={1.9} />
+                                </span>
+                                <h3>{card.title}</h3>
+                                <ul>
+                                    {card.items.map((item) => (
+                                        <li key={item}>{item}</li>
+                                    ))}
+                                </ul>
+                            </article>
+                        ))}
+                    </div>
+                    <div className="certificates-grid reveal-item" aria-label="Сертификаты и разрешительная документация">
+                        {certificateSlides.map((certificate) => (
+                            <article className="certificate-slide" key={certificate.title}>
+                                <img
+                                    src={certificate.image}
+                                    alt={certificate.alt}
+                                    width="941"
+                                    height="1672"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <h3>{certificate.title}</h3>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             <section className="team-section reveal-section" id="team" ref={registerRevealSection}>
-                <div className="section-shell">
-                    <p className="section-kicker reveal-item">Команда</p>
-                    <h2 className="section-title reveal-item">Люди, которые ведут строительство</h2>
+                <div className="team-shell">
+                    <article className="team-feature reveal-item">
+                        <div className="team-feature-copy">
+                            <p className="team-kicker">Команда</p>
+                            <h2>Основатели и команда</h2>
+                            <p>
+                                Great Nine Construction объединяет управленцев, инженеров и специалистов площадки,
+                                которые ведут проект от первой консультации до передачи объекта. Мы работаем в единой
+                                системе решений: фиксируем договоренности, контролируем сроки и держим качество работ
+                                под техническим наблюдением на каждом этапе.
+                            </p>
+                        </div>
+                        <img
+                            src="/great-nine-team-reviewing-construction-plans.webp"
+                            alt="Основатели и команда Great Nine Construction обсуждают строительный проект"
+                            width="612"
+                            height="408"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </article>
                     <div className="team-grid">
                         <article className="team-card reveal-item">
-                            <div className="team-avatar"></div>
-                            <h3>Руководитель проекта</h3>
-                            <p>Отвечает за график, бюджет и контроль качества.</p>
+                            <img
+                                src="/great-nine-team-reviewing-construction-plans.webp"
+                                alt="Руководитель проекта Great Nine Construction"
+                                width="612"
+                                height="408"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <div>
+                                <h3>Руководитель проекта</h3>
+                                <p>Отвечает за график, бюджет и контроль качества.</p>
+                            </div>
                         </article>
                         <article className="team-card reveal-item">
-                            <div className="team-avatar"></div>
-                            <h3>Инженер участка</h3>
-                            <p>Координирует работы на объекте и безопасность.</p>
+                            <img
+                                src="/great-nine-team-reviewing-construction-plans.webp"
+                                alt="Инженер участка Great Nine Construction"
+                                width="612"
+                                height="408"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <div>
+                                <h3>Инженер участка</h3>
+                                <p>Координирует работы на объекте и безопасность.</p>
+                            </div>
                         </article>
                         <article className="team-card reveal-item">
-                            <div className="team-avatar"></div>
-                            <h3>Ведущий архитектор</h3>
-                            <p>Следит за целостностью проекта и задачами клиента.</p>
+                            <img
+                                src="/great-nine-team-reviewing-construction-plans.webp"
+                                alt="Ведущий архитектор Great Nine Construction"
+                                width="612"
+                                height="408"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <div>
+                                <h3>Ведущий архитектор</h3>
+                                <p>Следит за целостностью проекта и задачами клиента.</p>
+                            </div>
                         </article>
                     </div>
                 </div>
@@ -880,15 +1040,10 @@ function Home() {
                     <p className="contact-kicker reveal-item">Свяжитесь с нами</p>
                     <h2 className="contact-title reveal-item">Начните проект сегодня</h2>
                     <p className="contact-lead reveal-item">
-                        Мы быстро отвечаем в WhatsApp и по почте. Для срочных вопросов звоните напрямую.
+                        Мы быстро отвечаем в WhatsApp. Для срочных вопросов звоните напрямую.
                     </p>
 
                     <div className="contact-cards">
-                        <a className="contact-card reveal-item" href="mailto:hello@greatnine.com">
-                            <span className="contact-label">Почта</span>
-                            <span className="contact-value">hello@greatnine.com</span>
-                            <span className="contact-action">Написать письмо</span>
-                        </a>
                         <a className="contact-card reveal-item" href="tel:+77001234567">
                             <span className="contact-label">Телефон</span>
                             <span className="contact-value">+7 (700) 123-45-67</span>

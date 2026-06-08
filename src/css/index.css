@@ -21,6 +21,14 @@ html, body {
   background-color: #f8f1e4;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 56px;
+}
+
 body {
   margin: 0;
   width: 100%;
@@ -51,4 +59,10 @@ h1 {
 
 button {
   font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
