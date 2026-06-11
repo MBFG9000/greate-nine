@@ -11,7 +11,6 @@ import {
     services,
     statistics,
     structuralAdvantages,
-    teamMembers,
     videoTestimonials,
 } from "./home/data/homeData"
 import { useAnimatedNumbers } from "./home/hooks/useAnimatedNumbers"
@@ -92,7 +91,7 @@ function Home() {
                 certificateSlides={certificateSlides}
                 registerRevealSection={registerRevealSection}
             />
-            <TeamSection registerRevealSection={registerRevealSection} teamMembers={teamMembers} />
+            <TeamSection registerRevealSection={registerRevealSection} />
             <ContactSection contactMethods={contactMethods} registerRevealSection={registerRevealSection} />
         </section>
     )

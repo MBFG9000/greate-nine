@@ -41,11 +41,11 @@
   width: clamp(68px, 6.2vw, 92px);
   height: clamp(68px, 6.2vw, 92px);
   padding: 0;
-  border: 2px solid rgba(255, 111, 34, 0.16);
+  border: 2px solid rgba(255, 111, 34, 0.18);
   border-radius: 50%;
   color: var(--color-white);
   background: var(--color-accent);
-  box-shadow: 0 18px 40px rgba(255, 111, 34, 0.32);
+  box-shadow: var(--shadow-primary);
   cursor: pointer;
   transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
@@ -65,9 +65,9 @@
 }
 
 .video-testimonials-control:hover {
-  color: var(--color-ink);
-  border-color: var(--color-border-subtle);
-  background: var(--color-white);
+  color: var(--color-white);
+  border-color: rgba(255, 111, 34, 0.28);
+  background: var(--color-accent-deep);
   transform: scale(1.04);
 }
 
@@ -126,8 +126,10 @@
   align-items: center;
   min-height: clamp(360px, 40vw, 520px);
   padding: clamp(22px, 3vw, 34px);
-  border: 1px solid var(--color-border-soft);
-  background: var(--color-white);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
   scroll-snap-align: start;
 }
 
@@ -168,6 +170,5 @@
   object-fit: cover;
   background: var(--color-ink);
   border: 0;
-  border-radius: 0;
+  border-radius: var(--radius-sm);
 }
-

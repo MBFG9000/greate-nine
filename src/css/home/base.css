@@ -1,7 +1,7 @@
 .home-hero-section {
   position: relative;
   width: 100%;
-  background: var(--color-page);
+  background: var(--gradient-section);
   color: var(--color-body);
 }
 
@@ -43,22 +43,25 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(to bottom, rgba(14, 10, 6, 0.48), rgba(20, 15, 8, 0.42) 42%, rgba(20, 15, 8, 0.56));
+  background: linear-gradient(to bottom, rgba(6, 12, 12, 0.5), rgba(9, 16, 16, 0.4) 42%, rgba(9, 16, 16, 0.58));
 }
 
 .hero-media-wrapper .hero-page-transition {
   position: absolute;
-  inset: 0;
+  right: 0;
+  bottom: -1px;
+  left: 0;
   z-index: 3;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(17, 28, 28, 0) 0%,
-      rgba(17, 28, 28, 0) 84%,
-      rgba(17, 28, 28, 0.32) 91%,
-      rgba(17, 28, 28, 0.86) 97%,
-      var(--color-ink) 100%
-    );
+  height: clamp(360px, 48vh, 620px);
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(16, 24, 23, 0) 0%,
+    rgba(16, 24, 23, 0.24) 24%,
+    rgba(16, 24, 23, 0.72) 68%,
+    rgba(16, 24, 23, 0.96) 92%,
+    #101817 100%
+  );
 }
 
 .hero-media-wrapper.is-video-loaded .hero-background-image {
@@ -103,7 +106,7 @@
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255, 248, 235, 0.8);
+  color: rgba(255, 248, 235, 0.84);
 }
 
 .hero-title {
@@ -112,7 +115,7 @@
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
-  text-shadow: 0 26px 55px rgba(2, 12, 15, 0.85);
+  text-shadow: 0 26px 55px rgba(2, 12, 15, 0.72);
 }
 
 .hero-subtitle {
@@ -172,7 +175,6 @@
 .js-enabled .reveal-section.is-visible .services-grid .reveal-item:nth-child(2),
 .js-enabled .reveal-section.is-visible .advantages-list .reveal-item:nth-child(2),
 .js-enabled .reveal-section.is-visible .projects-grid .reveal-item:nth-child(2),
-.js-enabled .reveal-section.is-visible .team-grid .reveal-item:nth-child(2),
 .js-enabled .reveal-section.is-visible .contact-cards .reveal-item:nth-child(2) {
   transition-delay: 0.08s;
 }
@@ -181,7 +183,6 @@
 .js-enabled .reveal-section.is-visible .services-grid .reveal-item:nth-child(3),
 .js-enabled .reveal-section.is-visible .advantages-list .reveal-item:nth-child(3),
 .js-enabled .reveal-section.is-visible .projects-grid .reveal-item:nth-child(3),
-.js-enabled .reveal-section.is-visible .team-grid .reveal-item:nth-child(3),
 .js-enabled .reveal-section.is-visible .contact-cards .reveal-item:nth-child(3) {
   transition-delay: 0.16s;
 }
@@ -223,7 +224,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(124, 78, 20, 0.8);
+  color: var(--color-accent-deep);
 }
 
 .section-title {
@@ -233,4 +234,3 @@
   line-height: 1.15;
   color: var(--color-heading);
 }
-

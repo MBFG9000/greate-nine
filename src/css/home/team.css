@@ -1,5 +1,5 @@
 .team-section {
-  background: var(--color-page);
+  background: linear-gradient(180deg, var(--color-section) 0%, var(--color-page) 42%, var(--color-section) 100%);
 }
 
 .team-shell {
@@ -10,16 +10,18 @@
 
 .team-feature {
   display: grid;
-  grid-template-columns: minmax(280px, 0.92fr) minmax(360px, 1.08fr);
+  grid-template-columns: minmax(280px, 0.88fr) minmax(420px, 1.12fr);
   gap: clamp(28px, 5vw, 64px);
   align-items: center;
   padding: clamp(22px, 3vw, 34px);
   border: 1px solid var(--color-border-subtle);
-  background: var(--color-white);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
 .team-feature-copy {
-  max-width: 560px;
+  max-width: 620px;
 }
 
 .team-kicker {
@@ -40,7 +42,15 @@
   line-height: 1.18;
 }
 
-.team-feature p:last-child {
+.team-founder-meta {
+  margin: 0 0 18px;
+  color: var(--color-accent);
+  font-size: clamp(0.95rem, 1.15vw, 1.04rem);
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.team-feature-copy p:last-child {
   margin: 0;
   color: var(--color-text-muted);
   font-size: clamp(1rem, 1.25vw, 1.12rem);
@@ -48,53 +58,13 @@
   line-height: 1.7;
 }
 
-.team-feature img {
+.team-feature-video {
   display: block;
   width: 100%;
-  aspect-ratio: 1.5 / 1;
+  aspect-ratio: 16 / 9;
+  min-height: clamp(300px, 29vw, 470px);
   object-fit: cover;
+  background: var(--color-ink);
   border: 1px solid var(--color-border-faint);
+  border-radius: var(--radius-sm);
 }
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(12px, 1.4vw, 18px);
-  margin-top: clamp(16px, 2.2vw, 24px);
-}
-
-.team-card {
-  display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
-  gap: 16px;
-  align-items: center;
-  background: var(--color-white);
-  min-height: 132px;
-  padding: clamp(18px, 2vw, 24px);
-  border: 1px solid var(--color-border-subtle);
-}
-
-.team-card img {
-  display: block;
-  width: 76px;
-  height: 76px;
-  object-fit: cover;
-  border: 1px solid var(--color-border-faint);
-}
-
-.team-card h3 {
-  margin: 0 0 8px;
-  color: var(--color-ink);
-  font-size: clamp(1rem, 1.25vw, 1.12rem);
-  font-weight: 800;
-  line-height: 1.25;
-}
-
-.team-card p {
-  margin: 0;
-  color: var(--color-text-muted);
-  font-size: 0.94rem;
-  font-weight: 600;
-  line-height: 1.6;
-}
-

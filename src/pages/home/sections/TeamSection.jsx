@@ -1,34 +1,29 @@
-import { TeamCard } from "../components/HomeCards"
-
-export function TeamSection({ registerRevealSection, teamMembers }) {
+export function TeamSection({ registerRevealSection }) {
     return (
         <section className="team-section reveal-section" id="team" ref={registerRevealSection}>
             <div className="team-shell">
                 <article className="team-feature reveal-item">
                     <div className="team-feature-copy">
-                        <p className="team-kicker">Команда</p>
-                        <h2>Основатели и команда</h2>
+                        <p className="team-kicker">Основатель</p>
+                        <h2>Основатель Great Nine Construction</h2>
+                        <p className="team-founder-meta">Личное участие в проектировании, сроках и качестве работ</p>
                         <p>
-                            Great Nine Construction объединяет управленцев, инженеров и специалистов площадки,
-                            которые ведут проект от первой консультации до передачи объекта. Мы работаем в единой
-                            системе решений: фиксируем договоренности, контролируем сроки и держим качество работ
-                            под техническим наблюдением на каждом этапе.
+                            Компания выросла из практического подхода к строительству: сначала понять задачу клиента,
+                            затем точно спланировать бюджет, сроки и последовательность работ. Основатель лично
+                            выстроил систему контроля, в которой проектные решения, закупки, площадка и приемка
+                            связаны в один понятный процесс без хаоса и лишних переделок.
                         </p>
                     </div>
-                    <img
-                        src="/great-nine-team-reviewing-construction-plans.webp"
-                        alt="Основатели и команда Great Nine Construction обсуждают строительный проект"
-                        width="612"
-                        height="408"
-                        loading="lazy"
-                        decoding="async"
-                    />
+                    <video
+                        className="team-feature-video"
+                        src="/great-nine-construction-project-showcase.mp4"
+                        poster="/great-nine-team-reviewing-construction-plans.webp"
+                        controls
+                        playsInline
+                        preload="metadata"
+                        aria-label="Видео об основателе Great Nine Construction"
+                    ></video>
                 </article>
-                <div className="team-grid">
-                    {teamMembers.map((member) => (
-                        <TeamCard key={member.title} member={member} />
-                    ))}
-                </div>
             </div>
         </section>
     )

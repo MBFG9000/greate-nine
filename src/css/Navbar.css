@@ -8,7 +8,7 @@
   left: 0;
   width: 100%;
   color: var(--color-cream);
-  background-color: rgba(20, 15, 8, 0.62);
+  background-color: rgba(16, 24, 23, 0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: 8px 48px;
@@ -93,7 +93,6 @@
   font-weight: 500;
   font-size: 0.84rem;
   letter-spacing: 0.07em;
-  text-transform: uppercase;
   color: var(--color-cream);
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease, letter-spacing 0.3s ease;
@@ -112,7 +111,7 @@
   bottom: -6px;
   width: 100%;
   height: 3px;
-  background: linear-gradient(135deg, #c7922b, #8b5a10);
+  background: var(--gradient-primary);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease;
@@ -156,7 +155,7 @@
 
 .btn-header button:active {
   transform: translateY(0);
-  box-shadow: 0 12px 24px rgba(156, 105, 25, 0.32);
+  box-shadow: 0 12px 24px rgba(233, 87, 27, 0.24);
 }
 
 @keyframes headerFadeDown {
@@ -188,7 +187,7 @@
     padding: 14px;
     border: 1px solid rgba(255, 248, 235, 0.16);
     border-radius: var(--radius-md);
-    background: rgba(20, 15, 8, 0.94);
+    background: rgba(16, 24, 23, 0.96);
     box-shadow: 0 20px 48px rgba(5, 8, 8, 0.36);
     opacity: 0;
     visibility: hidden;
@@ -244,19 +243,19 @@
   }
 
   .site-header.is-sticky nav {
-    background: rgba(248, 241, 228, 0.98);
-    border-color: rgba(39, 26, 7, 0.12);
-    box-shadow: 0 20px 48px rgba(39, 26, 7, 0.2);
+    background: rgba(245, 246, 243, 0.98);
+    border-color: var(--color-border-subtle);
+    box-shadow: var(--shadow-card);
   }
 
   .site-header.is-sticky .menu-toggle {
-    border-color: rgba(39, 26, 7, 0.14);
-    background: rgba(39, 26, 7, 0.06);
+    border-color: var(--color-border-soft);
+    background: rgba(17, 24, 23, 0.05);
   }
 
   .site-header.is-sticky nav a:hover,
   .site-header.is-sticky nav a:focus-visible {
-    background: rgba(39, 26, 7, 0.06);
+    background: rgba(17, 24, 23, 0.05);
   }
 }
 
@@ -285,10 +284,10 @@
 .site-header.is-sticky {
   --header-height: 45px;
   --logo-max-height: calc(var(--header-height) - 8px);
-  background-color: rgba(248, 241, 228, 0.96);
+  background-color: rgba(245, 246, 243, 0.96);
   color: var(--color-body);
   padding: 0 3.5vw;
-  box-shadow: 0 18px 40px rgba(39, 26, 7, 0.25);
+  box-shadow: var(--shadow-card);
   min-height: var(--header-height);
 }
 
@@ -322,8 +321,8 @@
   padding: 10px 20px;
   font-size: 0.7rem;
   letter-spacing: 0.12em;
-  background: linear-gradient(135deg, #ffb347 0%, #c07516 100%);
-  box-shadow: 0 16px 28px rgba(156, 105, 25, 0.35);
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-primary);
 }
 
 @media (max-width: 900px) {

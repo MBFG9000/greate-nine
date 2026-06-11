@@ -1,5 +1,5 @@
 .services-section {
-  background: var(--color-page);
+  background: var(--color-section);
 }
 
 .services-shell {
@@ -21,7 +21,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(280px, 0.95fr);
   grid-template-rows: minmax(300px, 0.88fr) minmax(390px, 1.12fr);
-  gap: clamp(8px, 1.4vw, 18px);
+  gap: clamp(14px, 1.6vw, 22px);
   width: 100%;
   min-height: 690px;
   margin-top: clamp(28px, 3.8vw, 42px);
@@ -30,10 +30,13 @@
 .service-card {
   position: relative;
   isolation: isolate;
+  display: block;
   min-height: 100%;
   overflow: hidden;
+  border-radius: var(--radius-xs);
   background: var(--color-ink);
   color: var(--color-white);
+  box-shadow: var(--shadow-card);
 }
 
 .service-card-wide {
@@ -62,8 +65,8 @@
   z-index: -1;
   content: "";
   background:
-    linear-gradient(to top, rgba(8, 10, 8, 0.78), rgba(8, 10, 8, 0.26) 56%, rgba(8, 10, 8, 0.08)),
-    linear-gradient(to right, rgba(8, 10, 8, 0.48), rgba(8, 10, 8, 0));
+    linear-gradient(to top, rgba(8, 14, 14, 0.82), rgba(8, 14, 14, 0.28) 56%, rgba(8, 14, 14, 0.08)),
+    linear-gradient(to right, rgba(8, 14, 14, 0.42), rgba(8, 14, 14, 0));
 }
 
 .service-content {
@@ -79,6 +82,7 @@
   color: var(--color-white);
   font-size: clamp(1.35rem, 2.6vw, 2.15rem);
   line-height: 1.12;
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
 }
 
 .service-card p {
@@ -92,4 +96,3 @@
   filter: saturate(1.08) contrast(1.04);
   transform: scale(1.055);
 }
-

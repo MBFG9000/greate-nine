@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
+import { useLocation, useNavigate } from "react-router-dom"
 import "../css/Navbar.css"
 
 const navItems = [
@@ -12,6 +13,8 @@ const navItems = [
 ]
 
 function NavBar() {
+    const location = useLocation()
+    const navigate = useNavigate()
     const [isSticky, setIsSticky] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -28,10 +31,9 @@ function NavBar() {
         }
     }, [])
 
-    const scrollTo = (event, id) => {
-        event.preventDefault()
-
+    const scrollToSection = (id) => {
         const target = document.getElementById(id)
+
         if (target) {
             const header = document.querySelector(".site-header")
             const headerOffset = (header?.getBoundingClientRect().height || 56) + 10
@@ -40,13 +42,25 @@ function NavBar() {
             window.scrollTo({ top: targetTop, behavior: "smooth" })
             window.history.pushState(null, "", `#${id}`)
         }
+    }
+
+    const scrollTo = (event, id) => {
+        event.preventDefault()
         setIsMenuOpen(false)
+
+        if (location.pathname !== "/") {
+            navigate({ pathname: "/", hash: `#${id}` })
+            window.setTimeout(() => scrollToSection(id), 80)
+            return
+        }
+
+        scrollToSection(id)
     }
 
     return (
         <header className={`site-header${isSticky ? " is-sticky" : ""}${isMenuOpen ? " is-menu-open" : ""}`}>
             <div className="logo">
-                <a href="#home" aria-label="Great Nine Construction" onClick={(event) => scrollTo(event, "home")}>
+                <a href="/#home" aria-label="Great Nine Construction" onClick={(event) => scrollTo(event, "home")}>
                     <img
                         className="logo-svg"
                         src="/great-nine-logo.png"
@@ -68,7 +82,7 @@ function NavBar() {
                 <ul>
                     {navItems.map((item) => (
                         <li key={item.id}>
-                            <a href={`#${item.id}`} onClick={(event) => scrollTo(event, item.id)}>
+                            <a href={`/#${item.id}`} onClick={(event) => scrollTo(event, item.id)}>
                                 <span className="nav-text">{item.label}</span>
                             </a>
                         </li>

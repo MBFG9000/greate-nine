@@ -1,5 +1,5 @@
 .assurance-section {
-  background: var(--color-page);
+  background: var(--color-section);
 }
 
 .assurance-shell {
@@ -42,7 +42,9 @@
   min-height: 360px;
   padding: clamp(20px, 2vw, 26px);
   border: 1px solid var(--color-border-subtle);
-  background: var(--color-white);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
 .assurance-card-icon {
@@ -53,8 +55,8 @@
   height: 54px;
   margin-bottom: 18px;
   border-radius: var(--radius-md);
-  color: var(--color-ink);
-  background: var(--color-page);
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
 }
 
 .assurance-card-icon svg,
@@ -118,7 +120,9 @@
   height: auto;
   object-fit: contain;
   border: 1px solid var(--color-border-soft);
-  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
 .certificate-slide h3 {
@@ -128,4 +132,3 @@
   font-weight: 800;
   line-height: 1.25;
 }
-

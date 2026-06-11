@@ -1,5 +1,5 @@
 .advantages-section {
-  background: var(--color-page);
+  background: var(--color-section);
   color: var(--color-ink);
 }
 
@@ -33,8 +33,10 @@
   align-items: start;
   min-height: 150px;
   padding: clamp(20px, 2.5vw, 28px);
+  border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.62);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
 .advantage-icon {
@@ -44,8 +46,8 @@
   width: 58px;
   height: 58px;
   border-radius: var(--radius-md);
-  color: var(--color-ink);
-  background: var(--color-white);
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
 }
 
 .advantage-icon svg,
@@ -68,4 +70,3 @@
   font-size: clamp(0.9rem, 1.2vw, 1rem);
   line-height: 1.65;
 }
-

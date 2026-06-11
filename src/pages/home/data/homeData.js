@@ -17,25 +17,25 @@ import {
 
 export const statistics = [
     {
-        value: 120,
+        value: 157,
         title: "Частные дома",
         label: "Завершенных объектов",
         Icon: House,
     },
     {
-        value: 12,
+        value: 45,
         title: "Коммерческие здания",
         label: "Сданных объектов",
         Icon: Building2,
     },
     {
-        value: 8,
+        value: 70,
         title: "Офисы и салоны",
         label: "Готовых проектов",
         Icon: Building,
     },
     {
-        value: 27,
+        value: 58,
         title: "Фасадные работы",
         label: "Завершенных проектов",
         Icon: Layers,
@@ -44,8 +44,9 @@ export const statistics = [
 
 export const services = [
     {
-        title: "Строительство домов",
-        description: "Индивидуальные дома, виллы и частные пространства с точным планированием и чистым исполнением.",
+        slug: "private-houses",
+        title: "Строительство частных домов",
+        description: "Проектируем и строим надежные дома для семьи с продуманной планировкой, инженерией и контролем каждого этапа работ.",
         image: "/great-nine-residential-house-construction.webp",
         srcSet:
             "/great-nine-residential-house-construction-800.webp 800w, /great-nine-residential-house-construction-1200.webp 1200w, /great-nine-residential-house-construction.webp 1600w",
@@ -53,8 +54,9 @@ export const services = [
         className: "service-card service-card-wide",
     },
     {
-        title: "Коммерческое строительство",
-        description: "Офисы, салоны, торговые и бизнес-пространства, готовые к ежедневной эксплуатации.",
+        slug: "commercial-buildings",
+        title: "Строительство коммерческих зданий",
+        description: "Возводим офисы, салоны, торговые и бизнес-объекты с расчетом на нагрузку, сроки запуска и ежедневную эксплуатацию.",
         image: "/great-nine-commercial-building-construction.webp",
         srcSet:
             "/great-nine-commercial-building-construction-800.webp 800w, /great-nine-commercial-building-construction-1200.webp 1200w, /great-nine-commercial-building-construction.webp 1600w",
@@ -62,21 +64,23 @@ export const services = [
         className: "service-card service-card-tall",
     },
     {
-        title: "Реновация",
-        description: "Конструктивные обновления, отделка и трансформация существующих объектов.",
+        slug: "turnkey-repair",
+        title: "Ремонт под ключ",
+        description: "Берем на себя черновые и чистовые работы, закупки, координацию мастеров и финальную подготовку пространства к использованию.",
         image: "/great-nine-home-renovation-facade.webp",
         srcSet:
             "/great-nine-home-renovation-facade-800.webp 800w, /great-nine-home-renovation-facade-1200.webp 1200w, /great-nine-home-renovation-facade.webp 1600w",
-        alt: "Реновация фасада частного дома от Great Nine Construction",
+        alt: "Ремонт под ключ частного дома от Great Nine Construction",
         className: "service-card",
     },
     {
-        title: "Управление проектом",
-        description: "График, бюджет, закупки и координация площадки от старта до сдачи объекта.",
+        slug: "cottages",
+        title: "Строительство коттеджей",
+        description: "Строим коттеджи для постоянного проживания и отдыха с учетом участка, архитектуры, энергоэффективности и будущего обслуживания.",
         image: "/great-nine-construction-project-management.webp",
         srcSet:
             "/great-nine-construction-project-management-800.webp 800w, /great-nine-construction-project-management-1200.webp 1200w, /great-nine-construction-project-management.webp 1600w",
-        alt: "Управление строительным проектом Great Nine Construction",
+        alt: "Строительство коттеджа Great Nine Construction",
         className: "service-card",
     },
 ]
@@ -106,6 +110,7 @@ export const structuralAdvantages = [
 
 export const projects = [
     {
+        slug: "private-villa-almaty",
         title: "Частная вилла",
         location: "Алматы",
         image: "/great-nine-private-villa-almaty.webp",
@@ -115,6 +120,7 @@ export const projects = [
         position: "center 35%",
     },
     {
+        slug: "family-house-kaskelen",
         title: "Загородный дом",
         location: "Каскелен",
         image: "/great-nine-family-house-kaskelen.webp",
@@ -124,6 +130,7 @@ export const projects = [
         position: "center",
     },
     {
+        slug: "commercial-project-astana",
         title: "Коммерческий объект",
         location: "Астана",
         image: "/great-nine-commercial-project-astana.webp",
@@ -133,6 +140,7 @@ export const projects = [
         position: "center",
     },
     {
+        slug: "turnkey-house-almaty",
         title: "Дом под ключ",
         location: "Алматы",
         image: "/great-nine-mountain-home-almaty.webp",
@@ -142,6 +150,7 @@ export const projects = [
         position: "center 58%",
     },
     {
+        slug: "facade-renovation-talgar",
         title: "Реконструкция фасада",
         location: "Талгар",
         image: "/great-nine-facade-renovation-talgar.webp",
@@ -151,6 +160,7 @@ export const projects = [
         position: "center 40%",
     },
     {
+        slug: "office-space-almaty",
         title: "Офисное пространство",
         location: "Алматы",
         image: "/great-nine-office-showroom-almaty.webp",
@@ -300,24 +310,6 @@ export const certificateSlides = [
         title: "Документы технического надзора",
         image: "/great-nine-construction-certificates-placeholder.png",
         alt: "Место для документов технического надзора Great Nine Construction",
-    },
-]
-
-export const teamMembers = [
-    {
-        title: "Руководитель проекта",
-        description: "Отвечает за график, бюджет и контроль качества.",
-        alt: "Руководитель проекта Great Nine Construction",
-    },
-    {
-        title: "Инженер участка",
-        description: "Координирует работы на объекте и безопасность.",
-        alt: "Инженер участка Great Nine Construction",
-    },
-    {
-        title: "Ведущий архитектор",
-        description: "Следит за целостностью проекта и задачами клиента.",
-        alt: "Ведущий архитектор Great Nine Construction",
     },
 ]
 

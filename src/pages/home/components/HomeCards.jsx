@@ -1,4 +1,5 @@
 import { MapPin } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export function StatCard({ item, value }) {
     return (
@@ -18,7 +19,11 @@ export function StatCard({ item, value }) {
 
 export function ServiceCard({ service }) {
     return (
-        <article className={`${service.className} reveal-item`}>
+        <Link
+            className={`${service.className} reveal-item`}
+            to={`/services/${service.slug}`}
+            aria-label={`Подробнее: ${service.title}`}
+        >
             <img
                 src={service.image}
                 srcSet={service.srcSet}
@@ -33,7 +38,7 @@ export function ServiceCard({ service }) {
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
             </div>
-        </article>
+        </Link>
     )
 }
 
@@ -53,7 +58,11 @@ export function AdvantageItem({ item }) {
 
 export function ProjectCard({ project }) {
     return (
-        <article className="project-card reveal-item">
+        <Link
+            className="project-card reveal-item"
+            to={`/projects/${project.slug}`}
+            aria-label={`Открыть проекты: ${project.title}`}
+        >
             <img
                 src={project.image}
                 srcSet={project.srcSet}
@@ -72,7 +81,7 @@ export function ProjectCard({ project }) {
                     {project.location}
                 </p>
             </div>
-        </article>
+        </Link>
     )
 }
 
@@ -104,25 +113,6 @@ export function CertificateCard({ certificate }) {
                 decoding="async"
             />
             <h3>{certificate.title}</h3>
-        </article>
-    )
-}
-
-export function TeamCard({ member }) {
-    return (
-        <article className="team-card reveal-item">
-            <img
-                src="/great-nine-team-reviewing-construction-plans.webp"
-                alt={member.alt}
-                width="612"
-                height="408"
-                loading="lazy"
-                decoding="async"
-            />
-            <div>
-                <h3>{member.title}</h3>
-                <p>{member.description}</p>
-            </div>
         </article>
     )
 }

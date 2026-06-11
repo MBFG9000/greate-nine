@@ -23,6 +23,12 @@ export function ContactSection({ contactMethods, registerRevealSection }) {
                         </a>
                     ))}
                 </div>
+
+                <div className="contact-office reveal-item">
+                    <span>Офис в Алматы</span>
+                    <strong>Алматы, проспект Аль-Фараби 77</strong>
+                    <p>Бизнес-центр Esentai Tower, 12 этаж, офис 1204</p>
+                </div>
             </div>
         </section>
     )
