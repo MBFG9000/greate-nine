@@ -14,10 +14,10 @@ const footerColumns = [
     {
         title: "Проекты",
         links: [
-            { label: "Частная вилла", to: "/projects/private-villa-almaty" },
-            { label: "Загородный дом", to: "/projects/family-house-kaskelen" },
-            { label: "Коммерческий объект", to: "/projects/commercial-project-astana" },
-            { label: "Офисное пространство", to: "/projects/office-space-almaty" },
+            { label: "Коммерческие объекты", to: "/#projects" },
+            { label: "Спортивные комплексы", to: "/#projects" },
+            { label: "Ритейл и рестораны", to: "/#projects" },
+            { label: "Жилые комплексы", to: "/#projects" },
         ],
     },
     {

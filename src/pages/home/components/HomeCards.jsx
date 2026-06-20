@@ -74,23 +74,22 @@ export function AdvantageItem({ item }) {
     )
 }
 
-export function ProjectCard({ project }) {
+export function ProjectCard({ project, onOpen }) {
     return (
-        <Link
+        <button
+            type="button"
             className="project-card reveal-item"
-            to={`/projects/${project.slug}`}
-            aria-label={`Открыть проекты: ${project.title}`}
+            aria-label={`Открыть проект: ${project.title}`}
+            onClick={() => onOpen(project)}
         >
             <img
-                src={project.image}
-                srcSet={project.srcSet}
+                src={project.images[0]}
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 31vw"
-                alt={project.alt}
+                alt={`${project.title}, реализованный проект Duron Construction`}
                 width="1200"
                 height="820"
                 loading="lazy"
                 decoding="async"
-                style={{ objectPosition: project.position }}
             />
             <div className="project-info">
                 <h3>{project.title}</h3>
@@ -99,7 +98,7 @@ export function ProjectCard({ project }) {
                     {project.location}
                 </p>
             </div>
-        </Link>
+        </button>
     )
 }
 

@@ -123,64 +123,73 @@ export const structuralAdvantages = [
 
 export const projects = [
     {
-        slug: "private-villa-almaty",
-        title: "Частная вилла",
+        title: "АО AIR ASTANA",
         location: "Алматы",
-        image: "/great-nine-private-villa-almaty.webp",
-        srcSet:
-            "/great-nine-private-villa-almaty-600.webp 600w, /great-nine-private-villa-almaty-900.webp 900w, /great-nine-private-villa-almaty.webp 1200w",
-        alt: "Реализованный проект частной виллы в Алматы от Duron Construction",
-        position: "center 35%",
+        category: "Коммерческий объект",
+        description: "Капитальный ремонт и модернизация административно-технического комплекса Centre 2. Выполнено комплексное обновление инженерной инфраструктуры, внутренних помещений и технических зон с учетом требований крупнейшего авиаперевозчика Казахстана.",
+        images: ["/our-projects/АО-AIR-ASTANA.png"],
     },
     {
-        slug: "family-house-kaskelen",
-        title: "Загородный дом",
-        location: "Каскелен",
-        image: "/great-nine-family-house-kaskelen.webp",
-        srcSet:
-            "/great-nine-family-house-kaskelen-600.webp 600w, /great-nine-family-house-kaskelen-900.webp 900w, /great-nine-family-house-kaskelen.webp 1200w",
-        alt: "Загородный дом в Каскелене построенный Duron Construction",
-        position: "center",
+        title: "АО KCELL",
+        location: "Петропавловск",
+        category: "Телекоммуникационный объект",
+        description: "Капитальный ремонт и техническое переоснащение технологического объекта связи Switch. Выполнены проектирование, производство и монтаж специализированных модульных конструкций для размещения и защиты телекоммуникационного оборудования.",
+        images: ["/our-projects/АО-KCELL.png"],
     },
     {
-        slug: "commercial-project-astana",
-        title: "Коммерческий объект",
-        location: "Астана",
-        image: "/great-nine-commercial-project-astana.webp",
-        srcSet:
-            "/great-nine-commercial-project-astana-600.webp 600w, /great-nine-commercial-project-astana-900.webp 900w, /great-nine-commercial-project-astana.webp 1200w",
-        alt: "Коммерческий объект в Астане реализованный Duron Construction",
-        position: "center",
-    },
-    {
-        slug: "turnkey-house-almaty",
-        title: "Дом под ключ",
+        title: "Центр настольного тенниса ADD",
         location: "Алматы",
-        image: "/great-nine-mountain-home-almaty.webp",
-        srcSet:
-            "/great-nine-mountain-home-almaty-600.webp 600w, /great-nine-mountain-home-almaty-900.webp 900w, /great-nine-mountain-home-almaty.webp 1200w",
-        alt: "Дом под ключ в Алматы с панорамными окнами от Duron Construction",
-        position: "center 58%",
+        category: "Спортивный комплекс",
+        description: "Строительство и чистовая отделка современного спортивного комплекса. Реализованы строительные, инженерные и отделочные работы с учетом требований к спортивной инфраструктуре и ежедневной эксплуатации объекта.",
+        images: ["/our-projects/Центр-настольного-тенниса-ADD.png"],
     },
     {
-        slug: "facade-renovation-talgar",
-        title: "Реконструкция фасада",
-        location: "Талгар",
-        image: "/great-nine-facade-renovation-talgar.webp",
-        srcSet:
-            "/great-nine-facade-renovation-talgar-600.webp 600w, /great-nine-facade-renovation-talgar-900.webp 900w, /great-nine-facade-renovation-talgar.webp 1200w",
-        alt: "Реконструкция фасада дома в Талгаре от Duron Construction",
-        position: "center 40%",
-    },
-    {
-        slug: "office-space-almaty",
-        title: "Офисное пространство",
+        title: "Премиальный ритейл в Saks Fifth Avenue",
         location: "Алматы",
-        image: "/great-nine-office-showroom-almaty.webp",
-        srcSet:
-            "/great-nine-office-showroom-almaty-600.webp 600w, /great-nine-office-showroom-almaty-900.webp 900w, /great-nine-office-showroom-almaty.webp 1200w",
-        alt: "Офисное пространство в Алматы построенное Duron Construction",
-        position: "center 35%",
+        category: "Премиальный ритейл",
+        description: "Реконструкция и эксклюзивная отделка торговых пространств международных премиальных брендов. Работы выполнены с применением высококачественных материалов и соблюдением корпоративных стандартов класса люкс.",
+        images: ["/our-projects/Премиальный-ритейл-в-Saks-Fifth-Avenue.png"],
+    },
+    {
+        title: "Ресторан Champagne / Винотека",
+        location: "Алматы",
+        category: "Ресторанный проект",
+        description: "Создание коммерческого пространства с индивидуальной концепцией интерьера. Выполнены отделочные работы, монтаж инженерных систем и реализация дизайнерских решений для формирования атмосферы премиального заведения.",
+        images: ["/our-projects/Ресторан-Champagne-Винотека.png"],
+    },
+    {
+        title: "Пекарня-кафе Monteverde",
+        location: "Алматы",
+        category: "Общественное питание",
+        description: "Полный комплекс строительно-монтажных и отделочных работ под ключ. Реализованы фасадные решения, внутренние инженерные сети и специализированные зоны для размещения пищевого производства.",
+        images: ["/our-projects/Пекарня-кафе-Monteverde.png"],
+    },
+    {
+        title: "ТОО ЭЛИТ СТРОЙ",
+        location: "Алматы",
+        category: "Жилое строительство",
+        description: "Участие в реализации строительных и отделочных работ на объекте жилого назначения. Выполнен комплекс работ в соответствии с проектной документацией, строительными нормами и требованиями заказчика.",
+        images: [
+            "/our-projects/ТОО-ЭЛИТ-СТРОЙ-1.png",
+            "/our-projects/ТОО-ЭЛИТ-СТРОЙ-2.png",
+        ],
+    },
+    {
+        title: "ЖК АЛМАТАУ",
+        location: "Алматы",
+        category: "Жилой комплекс",
+        description: "Участие в строительстве современного жилого комплекса. Выполнены общестроительные и отделочные работы, направленные на обеспечение качества, надежности и комфортной эксплуатации объекта.",
+        images: ["/our-projects/ЖК-АЛМАТАУ.png"],
+    },
+    {
+        title: "ЖК GREEN CITY",
+        location: "Алматы",
+        category: "Жилой комплекс",
+        description: "Участие в реализации многоэтажного жилого комплекса с современной архитектурой и развитой инфраструктурой. Работы выполнены в рамках утвержденных проектных решений и требований строительного контроля.",
+        images: [
+            "/our-projects/ЖК-GREEN-CITY-1.png",
+            "/our-projects/ЖК-GREEN-CITY-2.png",
+        ],
     },
 ]
 

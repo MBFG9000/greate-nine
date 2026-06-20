@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom"
+import { Navigate, Route, Routes, useLocation } from "react-router-dom"
 import "./css/App.css"
 import "./css/home/contact.css"
 
@@ -9,8 +9,6 @@ import Home from "./pages/Home"
 import { contactMethods } from "./pages/home/data/homeData"
 import { useRevealSections } from "./pages/home/hooks/useRevealSections"
 import { ContactSection } from "./pages/home/sections/ContactSection"
-import ProjectDetailPage from "./pages/projects/ProjectDetailPage"
-import ProjectsPage from "./pages/projects/ProjectsPage"
 import { ConstructionFlowSection } from "./pages/services/components/ServiceStagesSection"
 import { commercialBuildingFlowStages } from "./pages/services/data/commercialBuildingsContent"
 import { turnkeyRepairFlowStages } from "./pages/services/data/turnkeyRepairContent"
@@ -47,8 +45,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:slug" element={<ServiceDetailPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+          <Route path="/projects/*" element={<Navigate to="/#projects" replace />} />
         </Routes>
       </main>
       {isServicePage ? <ConstructionFlowSection {...constructionFlowProps} /> : null}
