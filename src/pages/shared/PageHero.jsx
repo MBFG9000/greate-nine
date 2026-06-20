@@ -1,16 +1,25 @@
 import { Link } from "react-router-dom"
 
-export function PageHero({ eyebrow, title, text, image, imagePosition = "center" }) {
+export function PageHero({
+    as: Component = "section",
+    eyebrow,
+    title,
+    text,
+    image,
+    imagePosition = "center",
+    imageWidth = 1600,
+    imageHeight = 900,
+}) {
     return (
-        <section className="page-hero">
+        <Component className="page-hero">
             <img
                 className="page-hero-image"
                 src={image}
                 alt=""
                 aria-hidden="true"
                 style={{ objectPosition: imagePosition }}
-                width="1600"
-                height="900"
+                width={imageWidth}
+                height={imageHeight}
                 loading="eager"
                 decoding="async"
             />
@@ -23,6 +32,6 @@ export function PageHero({ eyebrow, title, text, image, imagePosition = "center"
                     На главную
                 </Link>
             </div>
-        </section>
+        </Component>
     )
 }

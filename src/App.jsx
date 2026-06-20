@@ -1,15 +1,43 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, useLocation } from "react-router-dom"
 import "./css/App.css"
+import "./css/home/contact.css"
+
 import Footer from "./components/Footer"
 import NavBar from "./components/NavBar"
 import ScrollToTop from "./components/ScrollToTop"
 import Home from "./pages/Home"
+import { contactMethods } from "./pages/home/data/homeData"
+import { useRevealSections } from "./pages/home/hooks/useRevealSections"
+import { ContactSection } from "./pages/home/sections/ContactSection"
 import ProjectDetailPage from "./pages/projects/ProjectDetailPage"
 import ProjectsPage from "./pages/projects/ProjectsPage"
+import { ConstructionFlowSection } from "./pages/services/components/ServiceStagesSection"
+import { commercialBuildingFlowStages } from "./pages/services/data/commercialBuildingsContent"
+import { turnkeyRepairFlowStages } from "./pages/services/data/turnkeyRepairContent"
 import ServiceDetailPage from "./pages/services/ServiceDetailPage"
 import ServicesPage from "./pages/services/ServicesPage"
 
 function App() {
+  const location = useLocation()
+  const registerRevealSection = useRevealSections()
+  const isServicePage = location.pathname === "/services" || location.pathname.startsWith("/services/")
+  const isTurnkeyRepairPage = location.pathname === "/services/turnkey-repair"
+  const isCommercialBuildingsPage = location.pathname === "/services/commercial-buildings"
+  const constructionFlowProps = isTurnkeyRepairPage
+    ? {
+        stages: turnkeyRepairFlowStages,
+        heading: "Как проходит ремонт под ключ",
+        lead: "Показываем ключевые контрольные точки ремонта: что происходит на объекте, зачем нужен каждый этап и что проверяется перед переходом дальше.",
+        controlLabel: "Контрольная точка",
+      }
+    : isCommercialBuildingsPage
+      ? {
+          stages: commercialBuildingFlowStages,
+          lead: "Показываем семь последовательных этапов реализации коммерческого объекта: от анализа задач бизнеса до подготовки здания к открытию и эксплуатации.",
+          controlLabel: "Контрольная точка",
+        }
+      : {}
+
   return (
     <>
       <ScrollToTop />
@@ -23,6 +51,10 @@ function App() {
           <Route path="/projects/:slug" element={<ProjectDetailPage />} />
         </Routes>
       </main>
+      {isServicePage ? <ConstructionFlowSection {...constructionFlowProps} /> : null}
+      {isServicePage ? (
+        <ContactSection contactMethods={contactMethods} registerRevealSection={registerRevealSection} />
+      ) : null}
       <Footer />
     </>
   )

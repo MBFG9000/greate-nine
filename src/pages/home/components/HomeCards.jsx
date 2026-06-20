@@ -24,16 +24,34 @@ export function ServiceCard({ service }) {
             to={`/services/${service.slug}`}
             aria-label={`Подробнее: ${service.title}`}
         >
-            <img
-                src={service.image}
-                srcSet={service.srcSet}
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 44vw"
-                alt={service.alt}
-                width="1600"
-                height="1000"
-                loading="lazy"
-                decoding="async"
-            />
+            {service.videoSources ? (
+                <video
+                    aria-label={service.alt}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster={service.image}
+                    preload="metadata"
+                    width="1600"
+                    height="1000"
+                >
+                    {service.videoSources.map((source) => (
+                        <source key={source.src} src={source.src} type="video/webm" media={source.media} />
+                    ))}
+                </video>
+            ) : (
+                <img
+                    src={service.image}
+                    srcSet={service.srcSet}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 44vw"
+                    alt={service.alt}
+                    width={service.imageWidth ?? 1600}
+                    height={service.imageHeight ?? 1000}
+                    loading="lazy"
+                    decoding="async"
+                />
+            )}
             <div className="service-content">
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>

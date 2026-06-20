@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="728" height="728" viewBox="0 0 728 728" role="img" aria-labelledby="duron-logo-title">
+  <title id="duron-logo-title">Duron Construction logo</title>
+  <g fill="#ffffff">
+    <path d="M168 626V437c0-6 3-11 8-14l219-145c14-9 31-10 46-2 13 8 19 21 19 38v312h-34V314c0-7-3-12-9-15-5-3-10-2-16 2L202 433v193h-34Z" />
+    <path d="M251 626V462c0-6 3-11 8-14l98-64v40l-72 47v155h-34Z" />
+    <path d="M322 278V72c0-6 3-12 9-15 5-3 12-3 17 1l154 100c5 3 8 8 8 14v454h-34V181L356 103v143c0 6-3 11-8 14l-26 18Z" />
+    <path d="M322 229v41l-55 37v41l-34 22v-76c0-6 3-11 8-14l81-51Z" />
+    <path d="M476 306c0-6 3-12 9-15 5-3 12-2 17 1l66 48c5 3 8 8 8 14v272h-34V363l-32-23v286h-34V306Z" />
+    <path d="M322 626V443l35-23v206h-35Z" />
+  </g>
+</svg>

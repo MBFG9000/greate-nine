@@ -47,10 +47,23 @@ export const services = [
         slug: "private-houses",
         title: "Строительство частных домов",
         description: "Проектируем и строим надежные дома для семьи с продуманной планировкой, инженерией и контролем каждого этапа работ.",
-        image: "/great-nine-residential-house-construction.webp",
+        image: "/duron-construction-private-house-construction.webp",
         srcSet:
-            "/great-nine-residential-house-construction-800.webp 800w, /great-nine-residential-house-construction-1200.webp 1200w, /great-nine-residential-house-construction.webp 1600w",
-        alt: "Строительство современного частного дома Great Nine Construction",
+            "/duron-construction-private-house-construction-800.webp 800w, /duron-construction-private-house-construction-1200.webp 1200w, /duron-construction-private-house-construction.webp 1600w",
+        videoSources: [
+            {
+                src: "/duron-construction-private-house-construction-800.webm",
+                media: "(max-width: 768px)",
+            },
+            {
+                src: "/duron-construction-private-house-construction-1200.webm",
+                media: "(max-width: 1200px)",
+            },
+            {
+                src: "/duron-construction-private-house-construction.webm",
+            },
+        ],
+        alt: "Строительство современного частного дома Duron Construction",
         className: "service-card service-card-wide",
     },
     {
@@ -60,27 +73,27 @@ export const services = [
         image: "/great-nine-commercial-building-construction.webp",
         srcSet:
             "/great-nine-commercial-building-construction-800.webp 800w, /great-nine-commercial-building-construction-1200.webp 1200w, /great-nine-commercial-building-construction.webp 1600w",
-        alt: "Коммерческое здание построенное Great Nine Construction",
+        alt: "Коммерческое здание построенное Duron Construction",
         className: "service-card service-card-tall",
     },
     {
         slug: "turnkey-repair",
         title: "Ремонт под ключ",
         description: "Берем на себя черновые и чистовые работы, закупки, координацию мастеров и финальную подготовку пространства к использованию.",
-        image: "/great-nine-home-renovation-facade.webp",
-        srcSet:
-            "/great-nine-home-renovation-facade-800.webp 800w, /great-nine-home-renovation-facade-1200.webp 1200w, /great-nine-home-renovation-facade.webp 1600w",
-        alt: "Ремонт под ключ частного дома от Great Nine Construction",
+        image: "/services/duron-turnkey-repair-service-quality-72.webp",
+        imageWidth: 1200,
+        imageHeight: 600,
+        alt: "Ремонт под ключ частного дома от Duron Construction",
         className: "service-card",
     },
     {
         slug: "cottages",
         title: "Строительство коттеджей",
         description: "Строим коттеджи для постоянного проживания и отдыха с учетом участка, архитектуры, энергоэффективности и будущего обслуживания.",
-        image: "/great-nine-construction-project-management.webp",
-        srcSet:
-            "/great-nine-construction-project-management-800.webp 800w, /great-nine-construction-project-management-1200.webp 1200w, /great-nine-construction-project-management.webp 1600w",
-        alt: "Строительство коттеджа Great Nine Construction",
+        image: "/services/duron-cottage-construction-service-quality-72.webp",
+        imageWidth: 1000,
+        imageHeight: 1000,
+        alt: "Строительство коттеджа Duron Construction",
         className: "service-card",
     },
 ]
@@ -116,7 +129,7 @@ export const projects = [
         image: "/great-nine-private-villa-almaty.webp",
         srcSet:
             "/great-nine-private-villa-almaty-600.webp 600w, /great-nine-private-villa-almaty-900.webp 900w, /great-nine-private-villa-almaty.webp 1200w",
-        alt: "Реализованный проект частной виллы в Алматы от Great Nine Construction",
+        alt: "Реализованный проект частной виллы в Алматы от Duron Construction",
         position: "center 35%",
     },
     {
@@ -126,7 +139,7 @@ export const projects = [
         image: "/great-nine-family-house-kaskelen.webp",
         srcSet:
             "/great-nine-family-house-kaskelen-600.webp 600w, /great-nine-family-house-kaskelen-900.webp 900w, /great-nine-family-house-kaskelen.webp 1200w",
-        alt: "Загородный дом в Каскелене построенный Great Nine Construction",
+        alt: "Загородный дом в Каскелене построенный Duron Construction",
         position: "center",
     },
     {
@@ -136,7 +149,7 @@ export const projects = [
         image: "/great-nine-commercial-project-astana.webp",
         srcSet:
             "/great-nine-commercial-project-astana-600.webp 600w, /great-nine-commercial-project-astana-900.webp 900w, /great-nine-commercial-project-astana.webp 1200w",
-        alt: "Коммерческий объект в Астане реализованный Great Nine Construction",
+        alt: "Коммерческий объект в Астане реализованный Duron Construction",
         position: "center",
     },
     {
@@ -146,7 +159,7 @@ export const projects = [
         image: "/great-nine-mountain-home-almaty.webp",
         srcSet:
             "/great-nine-mountain-home-almaty-600.webp 600w, /great-nine-mountain-home-almaty-900.webp 900w, /great-nine-mountain-home-almaty.webp 1200w",
-        alt: "Дом под ключ в Алматы с панорамными окнами от Great Nine Construction",
+        alt: "Дом под ключ в Алматы с панорамными окнами от Duron Construction",
         position: "center 58%",
     },
     {
@@ -156,7 +169,7 @@ export const projects = [
         image: "/great-nine-facade-renovation-talgar.webp",
         srcSet:
             "/great-nine-facade-renovation-talgar-600.webp 600w, /great-nine-facade-renovation-talgar-900.webp 900w, /great-nine-facade-renovation-talgar.webp 1200w",
-        alt: "Реконструкция фасада дома в Талгаре от Great Nine Construction",
+        alt: "Реконструкция фасада дома в Талгаре от Duron Construction",
         position: "center 40%",
     },
     {
@@ -166,7 +179,7 @@ export const projects = [
         image: "/great-nine-office-showroom-almaty.webp",
         srcSet:
             "/great-nine-office-showroom-almaty-600.webp 600w, /great-nine-office-showroom-almaty-900.webp 900w, /great-nine-office-showroom-almaty.webp 1200w",
-        alt: "Офисное пространство в Алматы построенное Great Nine Construction",
+        alt: "Офисное пространство в Алматы построенное Duron Construction",
         position: "center 35%",
     },
 ]
@@ -180,7 +193,7 @@ export const videoTestimonials = [
     },
     {
         title: "Прозрачная смета и понятные сроки",
-        text: "Нам не приходилось постоянно уточнять детали. Great Nine Construction вела проект по графику, фиксировала изменения и держала нас в курсе по ключевым решениям.",
+        text: "Нам не приходилось постоянно уточнять детали. Duron Construction вела проект по графику, фиксировала изменения и держала нас в курсе по ключевым решениям.",
         address: "Каскелен, частный сектор",
         video: "/great-nine-construction-project-showcase.mp4",
     },
@@ -284,32 +297,32 @@ export const certificateSlides = [
     {
         title: "Лицензии на строительство",
         image: "/great-nine-construction-certificates-placeholder.png",
-        alt: "Место для лицензий и сертификатов Great Nine Construction",
+        alt: "Место для лицензий и сертификатов Duron Construction",
     },
     {
         title: "Разрешительная документация",
         image: "/great-nine-construction-certificates-placeholder.png",
-        alt: "Место для разрешительной документации Great Nine Construction",
+        alt: "Место для разрешительной документации Duron Construction",
     },
     {
         title: "Сертификаты качества",
         image: "/great-nine-construction-certificates-placeholder.png",
-        alt: "Место для сертификатов качества Great Nine Construction",
+        alt: "Место для сертификатов качества Duron Construction",
     },
     {
         title: "Допуски к строительным работам",
         image: "/great-nine-construction-certificates-placeholder.png",
-        alt: "Место для допусков к строительным работам Great Nine Construction",
+        alt: "Место для допусков к строительным работам Duron Construction",
     },
     {
         title: "Сертификаты материалов",
         image: "/great-nine-construction-certificates-placeholder.png",
-        alt: "Место для сертификатов материалов Great Nine Construction",
+        alt: "Место для сертификатов материалов Duron Construction",
     },
     {
         title: "Документы технического надзора",
         image: "/great-nine-construction-certificates-placeholder.png",
-        alt: "Место для документов технического надзора Great Nine Construction",
+        alt: "Место для документов технического надзора Duron Construction",
     },
 ]
 

@@ -2,7 +2,7 @@
   --header-height: 59px;
   --logo-max-height: calc(var(--header-height) - 12px);
   font-family: inherit;
-  z-index: 100000;
+  z-index: var(--z-header);
   position: fixed;
   top: 0;
   left: 0;
@@ -14,7 +14,7 @@
   padding: 8px 48px;
   min-height: var(--header-height);
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   transform: translateY(-24px);
   opacity: 0;
@@ -29,15 +29,21 @@
 .site-header .logo {
   display: flex;
   align-items: center;
+  justify-self: start;
   min-width: 0;
   height: 100%;
+}
+
+.site-header nav {
+  justify-self: center;
 }
 
 .site-header .logo a {
   display: flex;
   align-items: center;
+  gap: 10px;
   height: var(--logo-max-height);
-  max-width: min(18vw, 112px);
+  max-width: min(28vw, 250px);
 }
 
 .site-header nav ul {
@@ -81,11 +87,21 @@
 .logo-svg {
   display: block;
   width: auto;
-  max-width: 100%;
+  flex: 0 0 auto;
   height: auto;
   max-height: 100%;
   object-fit: contain;
   transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.logo-wordmark {
+  color: currentColor;
+  font-size: clamp(0.88rem, 1vw, 1rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .site-header nav li {
@@ -145,6 +161,10 @@
   box-shadow: var(--shadow-primary);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s ease, padding 0.3s ease, font-size 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.btn-header {
+  justify-self: end;
 }
 
 .btn-header button:hover {
@@ -235,7 +255,7 @@
   }
 
   .site-header .logo a {
-    max-width: min(32vw, 116px);
+    max-width: min(46vw, 240px);
   }
 
   .btn-header {
@@ -267,7 +287,7 @@
   }
 
   .site-header .logo a {
-    max-width: min(34vw, 96px);
+    max-width: min(54vw, 220px);
   }
 
   .site-header nav {
@@ -296,6 +316,7 @@
 }
 
 .site-header.is-sticky .logo-svg {
+  filter: brightness(0);
   transform: none;
 }
 
@@ -304,7 +325,11 @@
 }
 
 .site-header.is-sticky .logo a {
-  max-width: min(16vw, 88px);
+  max-width: min(26vw, 220px);
+}
+
+.site-header.is-sticky .logo-wordmark {
+  font-size: 0.86rem;
 }
 
 .site-header.is-sticky nav ul {
@@ -342,7 +367,7 @@
   }
 
   .site-header.is-sticky .logo a {
-    max-width: min(32vw, 116px);
+    max-width: min(46vw, 240px);
   }
 
   .site-header.is-sticky .btn-header {
@@ -356,6 +381,6 @@
   }
 
   .site-header.is-sticky .logo a {
-    max-width: min(34vw, 96px);
+    max-width: min(54vw, 220px);
   }
 }

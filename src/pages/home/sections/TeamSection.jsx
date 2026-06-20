@@ -5,7 +5,7 @@ export function TeamSection({ registerRevealSection }) {
                 <article className="team-feature reveal-item">
                     <div className="team-feature-copy">
                         <p className="team-kicker">Основатель</p>
-                        <h2>Основатель Great Nine Construction</h2>
+                        <h2>Основатель Duron Construction</h2>
                         <p className="team-founder-meta">Личное участие в проектировании, сроках и качестве работ</p>
                         <p>
                             Компания выросла из практического подхода к строительству: сначала понять задачу клиента,
@@ -21,7 +21,7 @@ export function TeamSection({ registerRevealSection }) {
                         controls
                         playsInline
                         preload="metadata"
-                        aria-label="Видео об основателе Great Nine Construction"
+                        aria-label="Видео об основателе Duron Construction"
                     ></video>
                 </article>
             </div>

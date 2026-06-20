@@ -60,12 +60,13 @@ function NavBar() {
     return (
         <header className={`site-header${isSticky ? " is-sticky" : ""}${isMenuOpen ? " is-menu-open" : ""}`}>
             <div className="logo">
-                <a href="/#home" aria-label="Great Nine Construction" onClick={(event) => scrollTo(event, "home")}>
+                <a href="/#home" aria-label="Duron Construction" onClick={(event) => scrollTo(event, "home")}>
                     <img
                         className="logo-svg"
-                        src="/great-nine-logo.png"
-                        alt="Логотип Great Nine Construction"
+                        src="/duron-construction-logo.svg"
+                        alt="Логотип Duron Construction"
                     />
+                    <span className="logo-wordmark">Duron Construction</span>
                 </a>
             </div>
             <button

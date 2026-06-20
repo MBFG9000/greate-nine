@@ -7,7 +7,7 @@ export function AboutSection({ isVisible, sectionRef }) {
                         <p className="about-kicker">О нас</p>
                         <h2>Строим надежно с 1999 года</h2>
                         <p>
-                            Great Nine Construction - подрядчик полного цикла, которому доверяют за прозрачное
+                            Duron Construction - подрядчик полного цикла, которому доверяют за прозрачное
                             планирование, надежные сроки и долговечное качество работ. Наша команда ведет каждый
                             проект с понятной коммуникацией, сильной координацией на площадке и ответственным
                             подходом к результату.
@@ -17,7 +17,7 @@ export function AboutSection({ isVisible, sectionRef }) {
                     <div className="about-image">
                         <img
                             src="/great-nine-team-reviewing-construction-plans.webp"
-                            alt="Команда Great Nine Construction изучает строительные чертежи"
+                            alt="Команда Duron Construction изучает строительные чертежи"
                             width="612"
                             height="408"
                             loading="lazy"

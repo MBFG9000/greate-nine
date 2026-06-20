@@ -138,3 +138,9 @@
 .contact-card:hover .contact-action {
   color: rgba(255, 255, 255, 0.92);
 }
+
+@media (max-width: 768px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+}

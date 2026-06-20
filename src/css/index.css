@@ -27,6 +27,8 @@
   --shadow-primary-hover: 0 24px 42px rgba(233, 87, 27, 0.34);
   --shadow-card: 0 18px 44px rgba(17, 24, 23, 0.08);
   --shadow-card-hover: 0 24px 58px rgba(17, 24, 23, 0.12);
+  --z-header: 1000;
+  --z-modal: 3000;
 
   font-family: "Manrope", "Segoe UI", Arial, sans-serif;
   line-height: 1.5;

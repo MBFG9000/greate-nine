@@ -2,10 +2,23 @@ import { useCallback, useEffect, useRef } from "react"
 
 export function useRevealSections() {
     const revealSectionsRef = useRef([])
+    const observerRef = useRef(null)
+    const supportsObserverRef = useRef(true)
 
     const registerRevealSection = useCallback((element) => {
-        if (element && !revealSectionsRef.current.includes(element)) {
-            revealSectionsRef.current.push(element)
+        if (!element || revealSectionsRef.current.includes(element)) {
+            return
+        }
+
+        revealSectionsRef.current.push(element)
+
+        if (!supportsObserverRef.current) {
+            element.classList.add("is-visible")
+            return
+        }
+
+        if (observerRef.current) {
+            observerRef.current.observe(element)
         }
     }, [])
 
@@ -15,6 +28,7 @@ export function useRevealSections() {
         const sections = revealSectionsRef.current.filter(Boolean)
 
         if (!("IntersectionObserver" in window)) {
+            supportsObserverRef.current = false
             sections.forEach((section) => section.classList.add("is-visible"))
             return undefined
         }
@@ -34,9 +48,11 @@ export function useRevealSections() {
             }
         )
 
+        observerRef.current = observer
         sections.forEach((section) => observer.observe(section))
 
         return () => {
+            observerRef.current = null
             observer.disconnect()
         }
     }, [])

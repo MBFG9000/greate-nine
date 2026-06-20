@@ -1,6 +1,9 @@
 import "../../../css/pages/InnerPage.css"
 
 import { PageHero } from "../../shared/PageHero"
+import { HouseVariantsSection } from "../components/HouseVariantsSection"
+import { ServiceScenarioSection } from "../components/ServiceScenarioSection"
+import { ServiceStagesSection } from "../components/ServiceStagesSection"
 
 function PrivateHousesPage() {
     return (
@@ -9,14 +12,12 @@ function PrivateHousesPage() {
                 eyebrow="Услуги"
                 title="Строительство частных домов"
                 text="Индивидуальные дома для постоянной жизни: планирование участка, архитектура, инженерия, строительные этапы и контроль качества до передачи объекта."
-                image="/great-nine-residential-house-construction.webp"
-                imagePosition="center 45%"
+                image="/duron-construction-private-houses-hero.webp"
+                imagePosition="center"
             />
-            <section className="inner-placeholder">
-                <div className="inner-placeholder-shell">
-                    <p>Блок работает</p>
-                </div>
-            </section>
+            <ServiceScenarioSection />
+            <ServiceStagesSection />
+            <HouseVariantsSection />
         </>
     )
 }

@@ -46,7 +46,7 @@ function Footer() {
             <div className="footer-shell">
                 <div className="footer-grid">
                     <section className="footer-brand" aria-label="О компании">
-                        <h3>Great Nine Construction</h3>
+                        <h3>Duron Construction</h3>
                         <p>
                             Строительная компания полного цикла: проектирование, управление площадкой, контроль сроков
                             и качества до передачи объекта.
@@ -54,7 +54,7 @@ function Footer() {
                         <address>
                             <span>Алматы, проспект Аль-Фараби 77, офис 1204</span>
                             <a href="tel:+77001234567">+7 (700) 123-45-67</a>
-                            <a href="mailto:info@greatnine.kz">info@greatnine.kz</a>
+                            <a href="mailto:info@duronconstruction.kz">info@duronconstruction.kz</a>
                         </address>
                     </section>
 
