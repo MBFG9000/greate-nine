@@ -96,6 +96,10 @@
 }
 
 @media (max-width: 768px) {
+  .construction-process-section {
+    background-position: 68% center;
+  }
+
   .hero-actions {
     flex-direction: column;
   }
@@ -244,7 +248,7 @@
     grid-template-columns: 58px minmax(0, 1fr);
     gap: 14px;
     min-height: 0;
-    padding: 18px;
+    padding: 0 0 18px;
   }
 
   .construction-process-marker {
@@ -257,6 +261,10 @@
   .construction-process-marker .lucide {
     width: 24px;
     height: 24px;
+  }
+
+  .construction-process-content {
+    padding: 18px 20px;
   }
 
   .assurance-shell {

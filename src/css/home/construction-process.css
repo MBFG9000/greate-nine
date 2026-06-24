@@ -1,131 +1,190 @@
 .construction-process-section {
+  --construction-process-background: url("/duron-construction-mountain-home-process-2560.webp");
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background:
-    linear-gradient(rgba(17, 24, 23, 0.62), rgba(17, 24, 23, 0.68)),
-    url("/great-nine-mountain-home-almaty.webp") center / cover no-repeat;
+    radial-gradient(circle at 50% 48%, rgba(8, 14, 14, 0.12), rgba(8, 14, 14, 0.58) 88%),
+    linear-gradient(rgba(7, 13, 15, 0.46), rgba(7, 13, 15, 0.54)),
+    var(--construction-process-background) center / cover no-repeat;
+}
+
+@supports (background-image: image-set(url("image.avif") type("image/avif"))) {
+  .construction-process-section {
+    --construction-process-background: image-set(
+      url("/duron-construction-mountain-home-process-2560.avif") type("image/avif"),
+      url("/duron-construction-mountain-home-process-2560.webp") type("image/webp")
+    );
+  }
 }
 
 .construction-process-shell {
   position: relative;
-  width: min(1180px, 100% - clamp(32px, 7vw, 120px));
+  width: min(1260px, 100% - clamp(32px, 7vw, 120px));
   margin: 0 auto;
-  padding: clamp(26px, 4vw, 52px) 0 clamp(64px, 8vw, 108px);
+  padding: clamp(54px, 6vw, 82px) 0 clamp(62px, 7vw, 94px);
 }
 
 .construction-process-title {
-  max-width: 940px;
-  margin: 0 auto clamp(38px, 5vw, 58px);
+  max-width: 760px;
+  margin: 0 auto clamp(38px, 4vw, 52px);
   color: var(--color-white);
   text-align: center;
   text-transform: uppercase;
-  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-size: clamp(1.5rem, 2.4vw, 2.15rem);
   font-weight: 800;
-  line-height: 1.18;
+  line-height: 1.16;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.36);
+}
+
+.construction-process-title::after {
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin: 22px auto 0;
+  content: "";
+  background: var(--color-accent);
 }
 
 .construction-process-path {
   position: relative;
+  width: min(1120px, 100%);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .construction-process-path::before {
   position: absolute;
-  top: 18px;
-  bottom: 18px;
+  top: 10px;
+  bottom: 10px;
   left: 50%;
   width: 2px;
   content: "";
-  background: linear-gradient(180deg, rgba(255, 111, 34, 0.12), rgba(255, 111, 34, 0.82), rgba(255, 111, 34, 0.12));
+  background: linear-gradient(180deg, rgba(255, 111, 34, 0.2), var(--color-accent) 12%, var(--color-accent) 88%, rgba(255, 111, 34, 0.2));
+  box-shadow: 0 0 16px rgba(255, 111, 34, 0.24);
   transform: translateX(-50%);
 }
 
 .construction-process-step {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 96px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 88px minmax(0, 1fr);
   gap: clamp(22px, 3vw, 42px);
   align-items: center;
-  min-height: 190px;
+  min-height: 158px;
 }
 
 .construction-process-marker {
   position: relative;
   grid-column: 2;
   grid-row: 1;
-  z-index: 1;
+  z-index: 2;
   display: grid;
   place-items: center;
   justify-self: center;
-  width: 96px;
-  height: 96px;
-  border: 8px solid rgba(255, 255, 255, 0.82);
+  width: 76px;
+  height: 76px;
+  padding: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.76);
   border-radius: var(--radius-md);
-  color: var(--color-ink);
-  background: var(--color-surface);
-  box-shadow: var(--shadow-card);
+  color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .construction-process-marker span {
   color: var(--color-accent);
-  font-size: 0.82rem;
-  font-weight: 800;
+  font-size: 0.7rem;
+  font-weight: 900;
   line-height: 1;
 }
 
 .construction-process-marker svg,
 .construction-process-marker .lucide {
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
 }
 
 .construction-process-content {
+  position: relative;
   grid-column: 3;
-  padding: clamp(20px, 2.4vw, 28px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  overflow: hidden;
+  padding: clamp(20px, 2.3vw, 28px) clamp(22px, 2.6vw, 32px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.58);
-  box-shadow: 0 14px 34px rgba(17, 24, 23, 0.1);
-  backdrop-filter: blur(14px);
+  color: var(--color-white);
+  background: rgba(12, 17, 17, 0.36);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px) saturate(1.08);
+  -webkit-backdrop-filter: blur(10px) saturate(1.08);
+}
+
+.construction-process-content::after {
+  position: absolute;
+  right: 18px;
+  bottom: 0;
+  left: 18px;
+  height: 2px;
+  content: "";
+  background: linear-gradient(90deg, transparent, var(--color-accent) 12%, var(--color-accent) 88%, transparent);
+  opacity: 0.9;
 }
 
 .construction-process-step:nth-child(even) .construction-process-content {
   grid-column: 1;
-  text-align: right;
+  text-align: left;
+}
+
+.construction-process-arrow {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 18px;
+  height: 18px;
+  color: rgba(255, 255, 255, 0.82);
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.construction-process-content:hover .construction-process-arrow {
+  color: var(--color-accent);
+  transform: translate(2px, -2px);
 }
 
 .construction-process-content h3 {
+  max-width: calc(100% - 34px);
   margin: 0 0 10px;
-  color: var(--color-ink);
-  font-size: clamp(1.05rem, 1.45vw, 1.22rem);
+  color: var(--color-white);
+  font-size: clamp(1.02rem, 1.35vw, 1.18rem);
   font-weight: 800;
   line-height: 1.24;
 }
 
 .construction-process-content p {
   margin: 0;
-  color: var(--color-text-muted);
-  font-size: clamp(0.92rem, 1.1vw, 1rem);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(0.88rem, 1vw, 0.96rem);
   font-weight: 600;
-  line-height: 1.62;
+  line-height: 1.58;
 }
 
 .construction-process-content .construction-process-label {
   display: inline-flex;
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   color: var(--color-accent);
-  font-size: 0.78rem;
-  font-weight: 800;
+  font-size: 0.7rem;
+  font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .construction-process-checkpoint {
   display: block;
-  margin-top: 16px;
-  color: var(--color-ink);
-  font-size: 0.92rem;
+  margin-top: 13px;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 0.86rem;
   font-weight: 800;
   line-height: 1.35;
 }

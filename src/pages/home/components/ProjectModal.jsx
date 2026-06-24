@@ -36,13 +36,42 @@ export function ProjectModal({ project, onClose }) {
         return null
     }
 
-    const requestClose = () => {
+    const requestClose = (afterClose) => {
         if (isClosing) {
             return
         }
 
         setIsClosing(true)
-        closeTimerRef.current = window.setTimeout(onClose, closeAnimationDuration)
+        closeTimerRef.current = window.setTimeout(() => {
+            onClose()
+
+            if (typeof afterClose === "function") {
+                window.requestAnimationFrame(() => window.requestAnimationFrame(afterClose))
+            }
+        }, closeAnimationDuration)
+    }
+
+    const scrollToContact = (attempt = 0) => {
+        const contactSection = document.getElementById("contact")
+
+        if (!contactSection) {
+            if (attempt < 20) {
+                window.setTimeout(() => scrollToContact(attempt + 1), 50)
+            }
+            return
+        }
+
+        const header = document.querySelector(".site-header")
+        const headerOffset = (header?.getBoundingClientRect().height || 56) + 10
+        const targetTop = contactSection.getBoundingClientRect().top + window.scrollY - headerOffset
+
+        window.history.pushState(null, "", "#contact")
+        window.scrollTo({ top: targetTop, behavior: "smooth" })
+    }
+
+    const handleContactClick = (event) => {
+        event.preventDefault()
+        requestClose(() => scrollToContact())
     }
 
     const handleKeyDown = (event) => {
@@ -138,7 +167,7 @@ export function ProjectModal({ project, onClose }) {
                         {project.location}
                     </p>
                     <p className="project-modal-description">{project.description}</p>
-                    <a className="project-modal-cta" href="#contact" onClick={requestClose}>
+                    <a className="project-modal-cta" href="#contact" onClick={handleContactClick}>
                         Связаться
                     </a>
                 </div>
