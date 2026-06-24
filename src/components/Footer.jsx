@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
 import "../css/Footer.css"
 
+import { companyContacts } from "../data/contactData"
+import { showDeferredHomeSections } from "../pages/home/config/homeSections"
+
 const footerColumns = [
     {
         title: "Услуги",
@@ -14,28 +17,28 @@ const footerColumns = [
     {
         title: "Проекты",
         links: [
-            { label: "Коммерческие объекты", to: "/#projects" },
-            { label: "Спортивные комплексы", to: "/#projects" },
-            { label: "Ритейл и рестораны", to: "/#projects" },
-            { label: "Жилые комплексы", to: "/#projects" },
+            { label: "Наше участие в проектах", to: "/#projects" },
+            { label: "Коммерческие объекты", to: "/services/commercial-buildings" },
+            { label: "Частные дома", to: "/services/private-houses" },
+            { label: "Коттеджи", to: "/services/cottages" },
         ],
     },
     {
         title: "Компания",
         links: [
             { label: "О нас", to: "/#about" },
-            { label: "Процесс строительства", to: "/#services" },
-            { label: "Гарантии и документы", to: "/#projects" },
-            { label: "Основатель", to: "/#team" },
+            { label: "Этапы строительства", to: "/#construction-process" },
+            { label: "Гарантии и контроль", to: "/#assurance" },
+            ...(showDeferredHomeSections ? [{ label: "Основатель", to: "/#team" }] : []),
         ],
     },
     {
         title: "Поддержка",
         links: [
             { label: "Контакты", to: "/#contact" },
-            { label: "Позвонить", href: "tel:+77001234567" },
-            { label: "WhatsApp", href: "https://wa.me/77001234567" },
-            { label: "Консультация", to: "/#contact" },
+            { label: "Позвонить", href: companyContacts.phoneHref },
+            { label: "WhatsApp", href: companyContacts.whatsappHref, isExternal: true },
+            { label: "Адрес в 2GIS", href: companyContacts.mapHref, isExternal: true },
         ],
     },
 ]
@@ -52,9 +55,10 @@ function Footer() {
                             и качества до передачи объекта.
                         </p>
                         <address>
-                            <span>Алматы, проспект Аль-Фараби 77, офис 1204</span>
-                            <a href="tel:+77001234567">+7 (700) 123-45-67</a>
-                            <a href="mailto:info@duronconstruction.kz">info@duronconstruction.kz</a>
+                            <a href={companyContacts.mapHref} rel="noopener noreferrer" target="_blank">
+                                {companyContacts.address}
+                            </a>
+                            <a href={companyContacts.phoneHref}>{companyContacts.phoneDisplay}</a>
                         </address>
                     </section>
 
@@ -65,7 +69,15 @@ function Footer() {
                                 {column.links.map((link) => (
                                     <li key={link.label}>
                                         {link.href ? (
-                                            <a href={link.href}>{link.label}</a>
+                                            <a
+                                                href={link.href}
+                                                rel={link.isExternal ? "noopener noreferrer" : undefined}
+                                                target={link.isExternal ? "_blank" : undefined}
+                                            >
+                                                {link.label}
+                                            </a>
+                                        ) : link.to.startsWith("/#") ? (
+                                            <a href={link.to}>{link.label}</a>
                                         ) : (
                                             <Link to={link.to}>{link.label}</Link>
                                         )}

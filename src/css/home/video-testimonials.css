@@ -16,10 +16,9 @@
 .video-testimonials-title {
   margin: 0;
   color: var(--color-ink);
-  text-transform: uppercase;
-  font-size: clamp(1.45rem, 2.4vw, 2rem);
-  font-weight: 800;
-  line-height: 1.18;
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-heading);
+  line-height: 1.1;
 }
 
 .video-testimonials-stage {
@@ -140,16 +139,16 @@
 .video-testimonial-copy h3 {
   margin: 0 0 16px;
   color: var(--color-ink);
-  font-size: clamp(1.5rem, 2.6vw, 2.6rem);
-  font-weight: 800;
-  line-height: 1.08;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-card-title);
+  line-height: 1.24;
 }
 
 .video-testimonial-copy p {
   margin: 0 0 24px;
   color: var(--color-text-muted);
-  font-size: clamp(1rem, 1.25vw, 1.16rem);
-  font-weight: 600;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body-strong);
   line-height: 1.68;
 }
 

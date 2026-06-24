@@ -113,6 +113,7 @@
   margin: 0;
   font-size: clamp(3rem, 9vw, 5.4rem);
   font-weight: 700;
+  line-height: 1.1;
   letter-spacing: 0;
   text-transform: uppercase;
   text-shadow: 0 26px 55px rgba(2, 12, 15, 0.72);
@@ -121,9 +122,10 @@
 .hero-subtitle {
   margin: 0;
   font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+  font-weight: 400;
   line-height: 1.8;
   color: rgba(255, 248, 235, 0.92);
-  max-width: 50ch;
+  max-width: 75ch;
 }
 
 .hero-actions {
@@ -139,7 +141,7 @@
   background: var(--gradient-primary);
   color: var(--color-cream);
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   text-transform: uppercase;
   box-shadow: var(--shadow-primary);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s ease;
@@ -153,9 +155,9 @@
 .hero-link {
   color: rgba(255, 248, 235, 0.95);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 0.75rem;
-  font-weight: 700;
+  letter-spacing: 0;
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-ui);
 }
 
 .js-enabled .reveal-section .reveal-item {
@@ -220,17 +222,17 @@
 
 .section-kicker {
   margin: 0 0 12px;
-  font-size: 0.75rem;
+  font-size: var(--font-size-label);
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-accent-deep);
 }
 
 .section-title {
   margin: 0 0 32px;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-heading);
+  line-height: 1.1;
   color: var(--color-heading);
 }

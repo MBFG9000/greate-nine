@@ -1,4 +1,8 @@
-export function TeamSection({ registerRevealSection }) {
+import { useRevealSections } from "../hooks/useRevealSections"
+
+export function TeamSection() {
+    const registerRevealSection = useRevealSections()
+
     return (
         <section className="team-section reveal-section" id="team" ref={registerRevealSection}>
             <div className="team-shell">

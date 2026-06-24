@@ -44,10 +44,10 @@
 
 .about-content .about-kicker {
   margin: 0 0 14px;
-  font-size: clamp(0.95rem, 1.25vw, 1.08rem);
-  font-weight: 800;
+  font-size: var(--font-size-label);
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-accent);
 }
@@ -55,8 +55,8 @@
 .about-content h2 {
   margin: 0 0 18px;
   font-size: clamp(2rem, 3.25vw, 2.8rem);
-  font-weight: 700;
-  line-height: 1.16;
+  font-weight: var(--font-weight-heading);
+  line-height: 1.1;
   color: var(--color-white);
 }
 
@@ -64,8 +64,9 @@
   margin: 0 0 28px;
   max-width: 40ch;
   color: var(--color-white-muted);
-  font-size: clamp(1rem, 1.35vw, 1.1rem);
-  line-height: 1.58;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: 1.65;
 }
 
 .about-btn {
@@ -77,9 +78,9 @@
   border-radius: var(--radius-md);
   background: var(--gradient-primary);
   color: var(--color-cream);
-  font-size: 0.88rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-ui);
+  letter-spacing: 0;
   text-transform: uppercase;
   box-shadow: var(--shadow-primary);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s ease;

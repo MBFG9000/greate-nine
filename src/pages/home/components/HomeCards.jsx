@@ -53,7 +53,7 @@ export function ServiceCard({ service }) {
                 />
             )}
             <div className="service-content">
-                <h3>{service.title}</h3>
+                <h2>{service.title}</h2>
                 <p>{service.description}</p>
             </div>
         </Link>

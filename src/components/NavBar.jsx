@@ -3,12 +3,14 @@ import { Menu, X } from "lucide-react"
 import { useLocation, useNavigate } from "react-router-dom"
 import "../css/Navbar.css"
 
+import { showDeferredHomeSections } from "../pages/home/config/homeSections"
+
 const navItems = [
     { id: "home", label: "Главная" },
     { id: "about", label: "О нас" },
     { id: "services", label: "Услуги" },
     { id: "projects", label: "Проекты" },
-    { id: "team", label: "Команда" },
+    ...(showDeferredHomeSections ? [{ id: "team", label: "Команда" }] : []),
     { id: "contact", label: "Контакты" },
 ]
 

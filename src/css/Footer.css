@@ -25,16 +25,16 @@
 .footer-links h3 {
   margin: 0 0 22px;
   color: var(--color-white);
-  font-size: clamp(1rem, 1.25vw, 1.12rem);
-  font-weight: 800;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-card-title);
   line-height: 1.25;
 }
 
 .footer-brand p {
   margin: 0;
   color: rgba(255, 255, 255, 0.68);
-  font-size: clamp(1rem, 1.2vw, 1.08rem);
-  font-weight: 600;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
   line-height: 1.75;
 }
 
@@ -45,7 +45,7 @@
   color: rgba(255, 255, 255, 0.64);
   font-size: 0.94rem;
   font-style: normal;
-  font-weight: 600;
+  font-weight: var(--font-weight-body);
   line-height: 1.55;
 }
 
@@ -74,7 +74,7 @@
 
 .footer-links a {
   font-size: 0.96rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-body-strong);
   line-height: 1.45;
 }
 

@@ -50,21 +50,20 @@
   }
 
   .construction-process-step {
-    grid-template-columns: 76px minmax(0, 1fr);
-    gap: 18px;
+    grid-template-columns: 68px minmax(0, 1fr);
+    gap: 16px;
     min-height: 0;
-    padding-bottom: 18px;
+    padding-bottom: 14px;
   }
 
   .construction-process-path::before {
-    left: 38px;
+    left: 34px;
   }
 
   .construction-process-marker {
     grid-column: 1;
-    width: 76px;
-    height: 76px;
-    border-width: 6px;
+    width: 68px;
+    height: 68px;
   }
 
   .construction-process-content,

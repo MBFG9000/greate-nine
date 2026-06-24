@@ -1,6 +1,7 @@
 import { FileText, Home, MapPin, MessageCircle, Phone, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
+import { companyContacts } from "../../../data/contactData"
 import { useRevealSections } from "../../home/hooks/useRevealSections"
 
 const scenarioItems = [
@@ -28,14 +29,14 @@ const contactLinks = [
     {
         icon: Phone,
         label: "Телефон",
-        value: "+7 (700) 123-45-67",
-        href: "tel:+77001234567",
+        value: companyContacts.phoneDisplay,
+        href: companyContacts.phoneHref,
     },
     {
         icon: MessageCircle,
         label: "WhatsApp",
-        value: "+7 700 123-45-67",
-        href: "https://wa.me/77001234567",
+        value: companyContacts.phoneDisplay,
+        href: companyContacts.whatsappHref,
         isExternal: true,
     },
 ]

@@ -1,8 +1,12 @@
-import { AssuranceCard, CertificateCard } from "../components/HomeCards"
+import { AssuranceCard } from "../components/HomeCards"
 
-export function AssuranceSection({ assuranceCards, certificateSlides, registerRevealSection }) {
+export function AssuranceSection({ assuranceCards, hasCertificates = false, registerRevealSection }) {
     return (
-        <section className="assurance-section reveal-section" ref={registerRevealSection}>
+        <section
+            className={`assurance-section reveal-section${hasCertificates ? " has-certificates" : ""}`}
+            id="assurance"
+            ref={registerRevealSection}
+        >
             <div className="assurance-shell">
                 <div className="assurance-header reveal-item">
                     <h2>Гарантии, разрешительная документация и контроль качества</h2>
@@ -14,11 +18,6 @@ export function AssuranceSection({ assuranceCards, certificateSlides, registerRe
                 <div className="assurance-grid">
                     {assuranceCards.map((card) => (
                         <AssuranceCard card={card} key={card.title} />
-                    ))}
-                </div>
-                <div className="certificates-grid reveal-item" aria-label="Сертификаты и разрешительная документация">
-                    {certificateSlides.map((certificate) => (
-                        <CertificateCard certificate={certificate} key={certificate.title} />
                     ))}
                 </div>
             </div>

@@ -1,17 +1,34 @@
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { VideoTestimonialSlide } from "../components/VideoTestimonialSlide"
+import { useEffect } from "react"
 
-export function VideoTestimonialsSection({
-    activeIndex,
-    registerRevealSection,
-    sectionRef,
-    scrollByDirection,
-    scrollToIndex,
-    shouldLoadVideos,
-    sliderRef,
-    testimonials,
-    updateActiveIndex,
-}) {
+import { VideoTestimonialSlide } from "../components/VideoTestimonialSlide"
+import { useInViewFlag } from "../hooks/useInViewFlag"
+import { useRevealSections } from "../hooks/useRevealSections"
+import { useVideoTestimonialsSlider } from "../hooks/useVideoTestimonialsSlider"
+
+export function VideoTestimonialsSection({ testimonials }) {
+    const registerRevealSection = useRevealSections()
+    const [sectionRef, testimonialsInView] = useInViewFlag({
+        rootMargin: "320px 0px",
+        threshold: 0,
+    })
+    const testimonialSlider = useVideoTestimonialsSlider()
+
+    useEffect(() => {
+        if (testimonialsInView) {
+            testimonialSlider.setShouldLoadVideos(true)
+        }
+    }, [testimonialSlider, testimonialsInView])
+
+    const {
+        activeIndex,
+        scrollByDirection,
+        scrollToIndex,
+        shouldLoadVideos,
+        sliderRef,
+        updateActiveIndex,
+    } = testimonialSlider
+
     const setSectionRefs = (element) => {
         sectionRef.current = element
         registerRevealSection(element)

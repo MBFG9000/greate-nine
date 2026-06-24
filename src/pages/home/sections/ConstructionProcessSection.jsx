@@ -2,7 +2,11 @@ import { ConstructionProcessStep } from "../components/ConstructionProcessStep"
 
 export function ConstructionProcessSection({ constructionProcess, registerRevealSection }) {
     return (
-        <section className="construction-process-section reveal-section" ref={registerRevealSection}>
+        <section
+            className="construction-process-section reveal-section"
+            id="construction-process"
+            ref={registerRevealSection}
+        >
             <div className="construction-process-shell">
                 <h2 className="construction-process-title reveal-item">
                     Прозрачный процесс строительства с контрольными этапами

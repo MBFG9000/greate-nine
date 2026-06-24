@@ -32,11 +32,11 @@ export function HeroSection({ shouldLoadHeroVideo }) {
             <div className="hero-page-transition"></div>
             <div className="hero-content is-loaded">
                 <p className="hero-kicker">Строительство полного цикла</p>
-                <h1 className="hero-title">Duron Construction</h1>
-                <p className="hero-subtitle">
-                    Строим качественно с 1999 года. Реализуем частные и коммерческие проекты с точностью,
-                    безопасностью и вниманием к каждой детали.
-                </p>
+                <p className="hero-title">Duron Construction</p>
+                <h1 className="hero-subtitle">
+                    Строительство, капитальный ремонт и реконструкция объектов в Алматы
+                    Строим качественно с 1999 года. Частные дома, коттеджи, коммерческие здания и инфраструктурные объекты под ключ.
+                </h1>
                 <div className="hero-actions">
                     <a className="hero-btn" href="#contact">Получить консультацию</a>
                     <a className="hero-link" href="#projects">Смотреть проекты</a>

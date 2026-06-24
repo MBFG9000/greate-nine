@@ -1,3 +1,5 @@
+import { companyContacts } from "../../../data/contactData"
+
 export function ContactSection({ contactMethods, registerRevealSection }) {
     return (
         <section className="contact-section reveal-section" id="contact" ref={registerRevealSection}>
@@ -26,8 +28,15 @@ export function ContactSection({ contactMethods, registerRevealSection }) {
 
                 <div className="contact-office reveal-item">
                     <span>Офис в Алматы</span>
-                    <strong>Алматы, проспект Аль-Фараби 77</strong>
-                    <p>Бизнес-центр Esentai Tower, 12 этаж, офис 1204</p>
+                    <a
+                        className="contact-office-link"
+                        href={companyContacts.mapHref}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        <strong>{companyContacts.address}</strong>
+                        <p>Открыть адрес в 2GIS</p>
+                    </a>
                 </div>
             </div>
         </section>

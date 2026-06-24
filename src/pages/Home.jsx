@@ -1,7 +1,5 @@
 import "../css/Home.css"
 
-import { useEffect } from "react"
-
 import {
     assuranceCards,
     certificateSlides,
@@ -17,10 +15,11 @@ import { useAnimatedNumbers } from "./home/hooks/useAnimatedNumbers"
 import { useDelayedHeroVideo } from "./home/hooks/useDelayedHeroVideo"
 import { useInViewFlag } from "./home/hooks/useInViewFlag"
 import { useRevealSections } from "./home/hooks/useRevealSections"
-import { useVideoTestimonialsSlider } from "./home/hooks/useVideoTestimonialsSlider"
+import { showDeferredHomeSections } from "./home/config/homeSections"
 import { AboutSection } from "./home/sections/AboutSection"
 import { AdvantagesSection } from "./home/sections/AdvantagesSection"
 import { AssuranceSection } from "./home/sections/AssuranceSection"
+import { CertificatesSection } from "./home/sections/CertificatesSection"
 import { ConstructionProcessSection } from "./home/sections/ConstructionProcessSection"
 import { ContactSection } from "./home/sections/ContactSection"
 import { HeroSection } from "./home/sections/HeroSection"
@@ -40,18 +39,7 @@ function Home() {
         rootMargin: "360px 0px",
         threshold: 0,
     })
-    const [videoTestimonialsSectionRef, testimonialsInView] = useInViewFlag({
-        rootMargin: "320px 0px",
-        threshold: 0,
-    })
     const statNumbers = useAnimatedNumbers(statistics, statisticsVisible)
-    const testimonialSlider = useVideoTestimonialsSlider()
-
-    useEffect(() => {
-        if (testimonialsInView) {
-            testimonialSlider.setShouldLoadVideos(true)
-        }
-    }, [testimonialSlider, testimonialsInView])
 
     return (
         <section className="home-hero-section" id="home">
@@ -71,27 +59,18 @@ function Home() {
                 shouldLoadVideo={shouldLoadProcessVideo}
             />
             <ProjectsSection projects={projects} registerRevealSection={registerRevealSection} />
-            <VideoTestimonialsSection
-                activeIndex={testimonialSlider.activeIndex}
-                registerRevealSection={registerRevealSection}
-                scrollByDirection={testimonialSlider.scrollByDirection}
-                scrollToIndex={testimonialSlider.scrollToIndex}
-                sectionRef={videoTestimonialsSectionRef}
-                shouldLoadVideos={testimonialSlider.shouldLoadVideos}
-                sliderRef={testimonialSlider.sliderRef}
-                testimonials={videoTestimonials}
-                updateActiveIndex={testimonialSlider.updateActiveIndex}
-            />
+            {showDeferredHomeSections ? <VideoTestimonialsSection testimonials={videoTestimonials} /> : null}
             <ConstructionProcessSection
                 constructionProcess={constructionProcess}
                 registerRevealSection={registerRevealSection}
             />
             <AssuranceSection
                 assuranceCards={assuranceCards}
-                certificateSlides={certificateSlides}
+                hasCertificates={showDeferredHomeSections}
                 registerRevealSection={registerRevealSection}
             />
-            <TeamSection registerRevealSection={registerRevealSection} />
+            {showDeferredHomeSections ? <CertificatesSection certificates={certificateSlides} /> : null}
+            {showDeferredHomeSections ? <TeamSection /> : null}
             <ContactSection contactMethods={contactMethods} registerRevealSection={registerRevealSection} />
         </section>
     )

@@ -15,6 +15,8 @@ import {
     TimerReset,
 } from "lucide-react"
 
+import { companyContacts } from "../../../data/contactData"
+
 export const statistics = [
     {
         value: 157,
@@ -273,12 +275,12 @@ export const assuranceCards = [
         ],
     },
     {
-        title: "Финансовые гарантии",
+        title: "Гарантии на выполненные работы",
         Icon: ClipboardCheck,
         items: [
-            "Фиксированная стоимость работ закрепляется в договоре.",
-            "Прозрачная смета без скрытых расходов и непредвиденных доплат.",
-            "Четко прописанные сроки, объемы работ и ответственность сторон.",
+            "Для каждого вида работ устанавливается отдельный гарантийный срок с учетом применяемой технологии и материалов.",
+            "Перечень работ, срок гарантии, условия ее действия и ответственность сторон фиксируются в договоре и приемочной документации.",
+            "Гарантийные обращения регистрируются, проверяются специалистами и устраняются в согласованные сроки после подтверждения случая.",
         ],
     },
     {
@@ -338,15 +340,15 @@ export const certificateSlides = [
 export const contactMethods = [
     {
         label: "Телефон",
-        value: "+7 (700) 123-45-67",
+        value: companyContacts.phoneDisplay,
         action: "Позвонить",
-        href: "tel:+77001234567",
+        href: companyContacts.phoneHref,
     },
     {
         label: "WhatsApp",
-        value: "+7 700 123-45-67",
+        value: companyContacts.phoneDisplay,
         action: "Написать в WhatsApp",
-        href: "https://wa.me/77001234567",
+        href: companyContacts.whatsappHref,
         isExternal: true,
     },
 ]
