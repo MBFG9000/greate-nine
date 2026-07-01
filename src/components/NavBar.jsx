@@ -1,9 +1,11 @@
+"use client"
+
 import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
-import { useLocation, useNavigate } from "react-router-dom"
-import "../css/Navbar.css"
+import { usePathname, useRouter } from "next/navigation"
 
-import { showDeferredHomeSections } from "../pages/home/config/homeSections"
+import { showDeferredHomeSections } from "../views/home/config/homeSections"
+import { scrollToSection, waitForSectionAndScroll } from "../utils/scrollToSection"
 
 const navItems = [
     { id: "home", label: "Главная" },
@@ -15,8 +17,8 @@ const navItems = [
 ]
 
 function NavBar() {
-    const location = useLocation()
-    const navigate = useNavigate()
+    const pathname = usePathname()
+    const router = useRouter()
     const [isSticky, setIsSticky] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -33,26 +35,13 @@ function NavBar() {
         }
     }, [])
 
-    const scrollToSection = (id) => {
-        const target = document.getElementById(id)
-
-        if (target) {
-            const header = document.querySelector(".site-header")
-            const headerOffset = (header?.getBoundingClientRect().height || 56) + 10
-            const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset
-
-            window.scrollTo({ top: targetTop, behavior: "smooth" })
-            window.history.pushState(null, "", `#${id}`)
-        }
-    }
-
     const scrollTo = (event, id) => {
         event.preventDefault()
         setIsMenuOpen(false)
 
-        if (location.pathname !== "/") {
-            navigate({ pathname: "/", hash: `#${id}` })
-            window.setTimeout(() => scrollToSection(id), 80)
+        if (pathname !== "/") {
+            router.push(`/#${id}`)
+            window.setTimeout(() => waitForSectionAndScroll(id), 0)
             return
         }
 
@@ -67,6 +56,9 @@ function NavBar() {
                         className="logo-svg"
                         src="/duron-construction-logo.svg"
                         alt="Логотип Duron Construction"
+                        width="44"
+                        height="44"
+                        fetchPriority="high"
                     />
                     <span className="logo-wordmark">Duron Construction</span>
                 </a>

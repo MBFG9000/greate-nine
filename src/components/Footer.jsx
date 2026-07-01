@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom"
-import "../css/Footer.css"
+import Link from "next/link"
 
 import { companyContacts } from "../data/contactData"
-import { showDeferredHomeSections } from "../pages/home/config/homeSections"
+import { showDeferredHomeSections } from "../views/home/config/homeSections"
 
 const footerColumns = [
     {
@@ -36,8 +35,10 @@ const footerColumns = [
         title: "Поддержка",
         links: [
             { label: "Контакты", to: "/#contact" },
-            { label: "Позвонить", href: companyContacts.phoneHref },
-            { label: "WhatsApp", href: companyContacts.whatsappHref, isExternal: true },
+            { label: "Позвонить: +7 707 239 9839", href: companyContacts.phoneHref },
+            { label: "WhatsApp: +7 707 239 9839", href: companyContacts.whatsappHref, isExternal: true },
+            { label: "Позвонить: +7 707 673 7782", href: companyContacts.secondPhoneHref },
+            { label: "WhatsApp: +7 707 673 7782", href: companyContacts.secondWhatsappHref, isExternal: true },
             { label: "Адрес в 2GIS", href: companyContacts.mapHref, isExternal: true },
         ],
     },
@@ -59,6 +60,8 @@ function Footer() {
                                 {companyContacts.address}
                             </a>
                             <a href={companyContacts.phoneHref}>{companyContacts.phoneDisplay}</a>
+                            <a href={companyContacts.secondPhoneHref}>{companyContacts.secondPhoneDisplay}</a>
+                            <span>{companyContacts.callHours}</span>
                         </address>
                     </section>
 
@@ -79,7 +82,7 @@ function Footer() {
                                         ) : link.to.startsWith("/#") ? (
                                             <a href={link.to}>{link.label}</a>
                                         ) : (
-                                            <Link to={link.to}>{link.label}</Link>
+                                            <Link href={link.to}>{link.label}</Link>
                                         )}
                                     </li>
                                 ))}
