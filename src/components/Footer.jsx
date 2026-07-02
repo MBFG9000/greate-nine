@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 import { companyContacts } from "../data/contactData"
 import { showDeferredHomeSections } from "../views/home/config/homeSections"
 
@@ -79,10 +77,8 @@ function Footer() {
                                             >
                                                 {link.label}
                                             </a>
-                                        ) : link.to.startsWith("/#") ? (
-                                            <a href={link.to}>{link.label}</a>
                                         ) : (
-                                            <Link href={link.to}>{link.label}</Link>
+                                            <a href={link.to}>{link.label}</a>
                                         )}
                                     </li>
                                 ))}

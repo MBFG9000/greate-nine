@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 
 import { showDeferredHomeSections } from "../views/home/config/homeSections"
-import { scrollToSection, waitForSectionAndScroll } from "../utils/scrollToSection"
+import { scrollToSection } from "../utils/scrollToSection"
 
 const navItems = [
     { id: "home", label: "Главная" },
@@ -18,7 +18,6 @@ const navItems = [
 
 function NavBar() {
     const pathname = usePathname()
-    const router = useRouter()
     const [isSticky, setIsSticky] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -40,8 +39,7 @@ function NavBar() {
         setIsMenuOpen(false)
 
         if (pathname !== "/") {
-            router.push(`/#${id}`)
-            window.setTimeout(() => waitForSectionAndScroll(id), 0)
+            window.location.assign(`/#${id}`)
             return
         }
 

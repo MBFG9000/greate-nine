@@ -1,5 +1,4 @@
 import { MapPin } from "lucide-react"
-import Link from "next/link"
 
 import { useInViewFlag } from "../hooks/useInViewFlag"
 
@@ -23,7 +22,7 @@ export function ServiceCard({ service }) {
     const [cardRef, shouldLoadVideo] = useInViewFlag({ rootMargin: "480px 0px" })
 
     return (
-        <Link
+        <a
             ref={service.videoSources ? cardRef : undefined}
             className={`${service.className} reveal-item`}
             href={`/services/${service.slug}`}
@@ -74,7 +73,7 @@ export function ServiceCard({ service }) {
                 <h2>{service.title}</h2>
                 <p>{service.description}</p>
             </div>
-        </Link>
+        </a>
     )
 }
 

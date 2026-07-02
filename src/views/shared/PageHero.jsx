@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 export function PageHero({
     as: Component = "section",
     eyebrow,
@@ -28,9 +26,9 @@ export function PageHero({
                 <p className="page-hero-eyebrow">{eyebrow}</p>
                 <h1>{title}</h1>
                 <p>{text}</p>
-                <Link className="page-hero-link" href="/">
+                <a className="page-hero-link" href="/">
                     На главную
-                </Link>
+                </a>
             </div>
         </Component>
     )
