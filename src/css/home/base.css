@@ -10,6 +10,11 @@
   contain-intrinsic-size: auto 760px;
 }
 
+.home-hero-section.is-anchor-layout-ready > :not(.hero-media-wrapper) {
+  content-visibility: visible;
+  contain-intrinsic-size: none;
+}
+
 .hero-media-wrapper {
   position: relative;
   overflow: hidden;

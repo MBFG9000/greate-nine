@@ -14,6 +14,28 @@ export default function HomePage() {
         <>
             <Home />
             <style>{`
+                @media (min-width: 769px) {
+                    .hero-content {
+                        width: min(100% - 64px, 1040px);
+                        max-width: 1040px;
+                        gap: 0.85rem;
+                    }
+
+                    .hero-kicker {
+                        font-size: 0.82rem;
+                    }
+
+                    .hero-title {
+                        font-size: clamp(2.8rem, 5vw, 4.6rem);
+                    }
+
+                    .hero-subtitle {
+                        max-width: 68ch;
+                        font-size: clamp(1rem, 1.3vw, 1.25rem);
+                        line-height: 1.6;
+                    }
+                }
+
                 @media (max-width: 768px) {
                     .projects-shell {
                         width: 100%;

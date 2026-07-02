@@ -38,12 +38,16 @@ function NavBar() {
         event.preventDefault()
         setIsMenuOpen(false)
 
-        if (pathname !== "/") {
+        const hasLocalContact = id === "contact" && document.getElementById("contact")
+
+        if (pathname !== "/" && !hasLocalContact) {
             window.location.assign(`/#${id}`)
             return
         }
 
-        scrollToSection(id)
+        window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => scrollToSection(id))
+        })
     }
 
     return (
