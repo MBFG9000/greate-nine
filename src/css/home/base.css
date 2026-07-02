@@ -5,6 +5,11 @@
   color: var(--color-body);
 }
 
+.home-hero-section > :not(.hero-media-wrapper) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 760px;
+}
+
 .hero-media-wrapper {
   position: relative;
   overflow: hidden;

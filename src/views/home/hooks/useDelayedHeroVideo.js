@@ -6,7 +6,8 @@ export function useDelayedHeroVideo() {
     useEffect(() => {
         let idleId
         let timeoutId
-        let startDelayId
+        let fallbackId
+        let hasScheduled = false
 
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
         const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
@@ -17,33 +18,39 @@ export function useDelayedHeroVideo() {
         }
 
         const scheduleHeroVideo = () => {
+            if (hasScheduled) {
+                return
+            }
+
+            hasScheduled = true
             const loadHeroVideo = () => setShouldLoadHeroVideo(true)
 
-            startDelayId = window.setTimeout(() => {
-                if ("requestIdleCallback" in window) {
-                    idleId = window.requestIdleCallback(loadHeroVideo, { timeout: 8000 })
-                    return
-                }
+            if ("requestIdleCallback" in window) {
+                idleId = window.requestIdleCallback(loadHeroVideo, { timeout: 5000 })
+                return
+            }
 
-                timeoutId = window.setTimeout(loadHeroVideo, 2500)
-            }, 1500)
+            timeoutId = window.setTimeout(loadHeroVideo, 1500)
         }
 
-        if (document.readyState === "complete") {
-            scheduleHeroVideo()
-        } else {
-            window.addEventListener("load", scheduleHeroVideo, { once: true })
-        }
+        const interactionEvents = ["pointerdown", "keydown"]
+        interactionEvents.forEach((eventName) => {
+            window.addEventListener(eventName, scheduleHeroVideo, { once: true, passive: true })
+        })
+
+        fallbackId = window.setTimeout(scheduleHeroVideo, 12000)
 
         return () => {
-            window.removeEventListener("load", scheduleHeroVideo)
+            interactionEvents.forEach((eventName) => {
+                window.removeEventListener(eventName, scheduleHeroVideo)
+            })
 
             if (idleId) {
                 window.cancelIdleCallback(idleId)
             }
 
-            if (startDelayId) {
-                window.clearTimeout(startDelayId)
+            if (fallbackId) {
+                window.clearTimeout(fallbackId)
             }
 
             if (timeoutId) {
