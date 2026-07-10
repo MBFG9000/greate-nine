@@ -54,19 +54,6 @@ export const services = [
         image: "/duron-construction-private-house-construction.webp",
         srcSet:
             "/duron-construction-private-house-construction-800.webp 800w, /duron-construction-private-house-construction-1200.webp 1200w, /duron-construction-private-house-construction.webp 1600w",
-        videoSources: [
-            {
-                src: "/duron-construction-private-house-construction-800.webm",
-                media: "(max-width: 768px)",
-            },
-            {
-                src: "/duron-construction-private-house-construction-1200.webm",
-                media: "(max-width: 1200px)",
-            },
-            {
-                src: "/duron-construction-private-house-construction.webm",
-            },
-        ],
         alt: "Строительство современного частного дома Duron Construction",
         className: "service-card service-card-wide",
     },
@@ -131,42 +118,42 @@ export const projects = [
         location: "Алматы",
         category: "Коммерческий объект",
         description: "Капитальный ремонт и модернизация административно-технического комплекса Centre 2. Выполнено комплексное обновление инженерной инфраструктуры, внутренних помещений и технических зон с учетом требований крупнейшего авиаперевозчика Казахстана.",
-        images: ["/our-projects/АО-AIR-ASTANA.png"],
+        images: ["/our-projects/АО-AIR-ASTANA.webp"],
     },
     {
         title: "АО KCELL",
         location: "Петропавловск",
         category: "Телекоммуникационный объект",
         description: "Капитальный ремонт и техническое переоснащение технологического объекта связи Switch. Выполнены проектирование, производство и монтаж специализированных модульных конструкций для размещения и защиты телекоммуникационного оборудования.",
-        images: ["/our-projects/АО-KCELL.png"],
+        images: ["/our-projects/АО-KCELL.webp"],
     },
     {
         title: "Центр настольного тенниса ADD",
         location: "Алматы",
         category: "Спортивный комплекс",
         description: "Строительство и чистовая отделка современного спортивного комплекса. Реализованы строительные, инженерные и отделочные работы с учетом требований к спортивной инфраструктуре и ежедневной эксплуатации объекта.",
-        images: ["/our-projects/Центр-настольного-тенниса-ADD.png"],
+        images: ["/our-projects/Центр-настольного-тенниса-ADD.webp"],
     },
     {
         title: "Премиальный ритейл в Saks Fifth Avenue",
         location: "Алматы",
         category: "Премиальный ритейл",
         description: "Реконструкция и эксклюзивная отделка торговых пространств международных премиальных брендов. Работы выполнены с применением высококачественных материалов и соблюдением корпоративных стандартов класса люкс.",
-        images: ["/our-projects/Премиальный-ритейл-в-Saks-Fifth-Avenue.png"],
+        images: ["/our-projects/Премиальный-ритейл-в-Saks-Fifth-Avenue.webp"],
     },
     {
         title: "Ресторан Champagne / Винотека",
         location: "Алматы",
         category: "Ресторанный проект",
         description: "Создание коммерческого пространства с индивидуальной концепцией интерьера. Выполнены отделочные работы, монтаж инженерных систем и реализация дизайнерских решений для формирования атмосферы премиального заведения.",
-        images: ["/our-projects/Ресторан-Champagne-Винотека.png"],
+        images: ["/our-projects/Ресторан-Champagne-Винотека.webp"],
     },
     {
         title: "Пекарня-кафе Monteverde",
         location: "Алматы",
         category: "Общественное питание",
         description: "Полный комплекс строительно-монтажных и отделочных работ под ключ. Реализованы фасадные решения, внутренние инженерные сети и специализированные зоны для размещения пищевого производства.",
-        images: ["/our-projects/Пекарня-кафе-Monteverde.png"],
+        images: ["/our-projects/Пекарня-кафе-Monteverde.webp"],
     },
     {
         title: "ТОО ЭЛИТ СТРОЙ",
@@ -174,8 +161,8 @@ export const projects = [
         category: "Жилое строительство",
         description: "Участие в реализации строительных и отделочных работ на объекте жилого назначения. Выполнен комплекс работ в соответствии с проектной документацией, строительными нормами и требованиями заказчика.",
         images: [
-            "/our-projects/ТОО-ЭЛИТ-СТРОЙ-1.png",
-            "/our-projects/ТОО-ЭЛИТ-СТРОЙ-2.png",
+            "/our-projects/ТОО-ЭЛИТ-СТРОЙ-1.webp",
+            "/our-projects/ТОО-ЭЛИТ-СТРОЙ-2.webp",
         ],
     },
     {
@@ -183,7 +170,7 @@ export const projects = [
         location: "Алматы",
         category: "Жилой комплекс",
         description: "Участие в строительстве современного жилого комплекса. Выполнены общестроительные и отделочные работы, направленные на обеспечение качества, надежности и комфортной эксплуатации объекта.",
-        images: ["/our-projects/ЖК-АЛМАТАУ.png"],
+        images: ["/our-projects/ЖК-АЛМАТАУ.webp"],
     },
     {
         title: "ЖК GREEN CITY",
@@ -191,8 +178,8 @@ export const projects = [
         category: "Жилой комплекс",
         description: "Участие в реализации многоэтажного жилого комплекса с современной архитектурой и развитой инфраструктурой. Работы выполнены в рамках утвержденных проектных решений и требований строительного контроля.",
         images: [
-            "/our-projects/ЖК-GREEN-CITY-1.png",
-            "/our-projects/ЖК-GREEN-CITY-2.png",
+            "/our-projects/ЖК-GREEN-CITY-1.webp",
+            "/our-projects/ЖК-GREEN-CITY-2.webp",
         ],
     },
 ]
@@ -202,19 +189,19 @@ export const videoTestimonials = [
         title: "Дом под ключ без лишних переделок",
         text: "Команда заранее показала этапы, смету и порядок работ. На стройке было понятно, что уже принято, что в процессе и где нужен наш ответ.",
         address: "Алматы, мкр. Каменское плато",
-        video: "/great-nine-construction-project-showcase.mp4",
+        video: "/great-nine-construction-project-showcase.webm",
     },
     {
         title: "Прозрачная смета и понятные сроки",
         text: "Нам не приходилось постоянно уточнять детали. Duron Construction вела проект по графику, фиксировала изменения и держала нас в курсе по ключевым решениям.",
         address: "Каскелен, частный сектор",
-        video: "/great-nine-construction-project-showcase.mp4",
+        video: "/great-nine-construction-project-showcase.webm",
     },
     {
         title: "Коммерческий объект с контролем процесса",
         text: "Для нас было важно не останавливать бизнес-план из-за стройки. Подрядчик координировал площадку, поставки и качество работ без хаоса в коммуникации.",
         address: "Астана, коммерческий объект",
-        video: "/great-nine-construction-project-showcase.mp4",
+        video: "/great-nine-construction-project-showcase.webm",
     },
 ]
 

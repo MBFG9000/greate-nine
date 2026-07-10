@@ -184,7 +184,13 @@
 
   .contact-card {
     min-width: 0;
-    padding: 17px 6px 15px;
+    min-height: 146px;
+    padding: 14px 12px;
+    gap: 7px;
+  }
+
+  .contact-card-heading {
+    width: 100%;
     gap: 8px;
   }
 
@@ -193,10 +199,10 @@
   }
 
   .contact-method-icon {
-    position: static;
-    width: 34px;
-    height: 34px;
-    margin: 0 auto;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    flex-basis: 32px;
   }
 
   .contact-method-icon svg,
@@ -206,7 +212,8 @@
   }
 
   .contact-value {
-    font-size: clamp(0.8rem, 3.7vw, 1.05rem);
+    margin-top: 3px;
+    font-size: clamp(0.82rem, 3.55vw, 1rem);
     white-space: nowrap;
   }
 

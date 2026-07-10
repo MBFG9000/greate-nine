@@ -11,7 +11,7 @@ export function ProcessVideoSection({ registerRevealSection, sectionRef, shouldL
             ref={setSectionRefs}
         >
             <video
-                src={shouldLoadVideo ? "/great-nine-construction-project-showcase.mp4" : undefined}
+                src={shouldLoadVideo ? "/great-nine-construction-project-showcase.webm" : undefined}
                 autoPlay
                 muted
                 loop

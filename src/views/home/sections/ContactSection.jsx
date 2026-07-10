@@ -25,10 +25,12 @@ export function ContactSection({ contactMethods, registerRevealSection }) {
                             rel={method.isExternal ? "noopener" : undefined}
                             target={method.isExternal ? "_blank" : undefined}
                         >
-                            <span className="contact-method-icon" aria-hidden="true">
-                                <method.Icon strokeWidth={2} />
+                            <span className="contact-card-heading">
+                                <span className="contact-method-icon" aria-hidden="true">
+                                    <method.Icon strokeWidth={2} />
+                                </span>
+                                <span className="contact-label">{method.label}</span>
                             </span>
-                            <span className="contact-label">{method.label}</span>
                             <span className="contact-value">{method.value}</span>
                             <span className="contact-action">{method.action}</span>
                         </a>

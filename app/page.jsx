@@ -1,5 +1,4 @@
-import "../src/css/Home.css"
-import "../src/css/home/responsive.css"
+import "../src/css/generated/home.css"
 
 import Home from "../src/views/Home"
 import { SITE_URL } from "../src/data/seoData"

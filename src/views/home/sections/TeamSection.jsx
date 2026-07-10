@@ -20,7 +20,7 @@ export function TeamSection() {
                     </div>
                     <video
                         className="team-feature-video"
-                        src="/great-nine-construction-project-showcase.mp4"
+                        src="/great-nine-construction-project-showcase.webm"
                         poster="/great-nine-team-reviewing-construction-plans.webp"
                         controls
                         playsInline

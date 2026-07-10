@@ -99,7 +99,7 @@
   color: var(--color-white);
   z-index: 4;
   opacity: 1;
-  transform: translateY(32px);
+  transform: none;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -107,7 +107,7 @@
 }
 
 .hero-content.is-loaded {
-  animation: heroFadeUp 0.9s ease forwards;
+  animation: none;
 }
 
 .hero-kicker {

@@ -1,3 +1,5 @@
+import "../src/css/generated/services.css"
+
 import Link from "next/link"
 
 export default function NotFound() {

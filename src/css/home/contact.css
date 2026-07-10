@@ -151,7 +151,7 @@
   color: inherit;
   background: rgba(255, 255, 255, 0.07);
   min-height: 112px;
-  padding: 16px 54px 14px 16px;
+  padding: 16px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-md);
   display: flex;
@@ -159,6 +159,13 @@
   gap: 5px;
   text-align: left;
   transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
 }
 
 .contact-card:hover {
@@ -176,12 +183,10 @@
 }
 
 .contact-method-icon {
-  position: absolute;
-  top: 14px;
-  right: 14px;
   width: 36px;
   height: 36px;
   margin: 0;
+  flex: 0 0 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -203,6 +208,7 @@
 }
 
 .contact-action {
+  margin-top: auto;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 700;

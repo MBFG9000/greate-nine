@@ -1,7 +1,5 @@
 import { MapPin } from "lucide-react"
 
-import { useInViewFlag } from "../hooks/useInViewFlag"
-
 export function StatCard({ item, value }) {
     return (
         <article className="stat-card">
@@ -19,56 +17,22 @@ export function StatCard({ item, value }) {
 }
 
 export function ServiceCard({ service }) {
-    const [cardRef, shouldLoadVideo] = useInViewFlag({ rootMargin: "480px 0px" })
-
     return (
         <a
-            ref={service.videoSources ? cardRef : undefined}
             className={`${service.className} reveal-item`}
             href={`/services/${service.slug}`}
             aria-label={`Подробнее: ${service.title}`}
         >
-            {service.videoSources ? (
-                <>
-                    <img
-                        src={service.image}
-                        srcSet={service.srcSet}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 44vw"
-                        alt={service.alt}
-                        width="1600"
-                        height="1000"
-                        loading="lazy"
-                        decoding="async"
-                    />
-                    {shouldLoadVideo ? (
-                        <video
-                            aria-label={service.alt}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            preload="metadata"
-                            width="1600"
-                            height="1000"
-                        >
-                            {service.videoSources.map((source) => (
-                                <source key={source.src} src={source.src} type="video/webm" media={source.media} />
-                            ))}
-                        </video>
-                    ) : null}
-                </>
-            ) : (
-                <img
-                    src={service.image}
-                    srcSet={service.srcSet}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 44vw"
-                    alt={service.alt}
-                    width={service.imageWidth ?? 1600}
-                    height={service.imageHeight ?? 1000}
-                    loading="lazy"
-                    decoding="async"
-                />
-            )}
+            <img
+                src={service.image}
+                srcSet={service.srcSet}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 44vw"
+                alt={service.alt}
+                width={service.imageWidth ?? 1600}
+                height={service.imageHeight ?? 1000}
+                loading="lazy"
+                decoding="async"
+            />
             <div className="service-content">
                 <h2>{service.title}</h2>
                 <p>{service.description}</p>

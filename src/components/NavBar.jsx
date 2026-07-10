@@ -56,7 +56,7 @@ function NavBar() {
                 <a href="/#home" aria-label="Duron Construction" onClick={(event) => scrollTo(event, "home")}>
                     <img
                         className="logo-svg"
-                        src="/duron-construction-logo.svg"
+                        src="/favicon.svg"
                         alt="Логотип Duron Construction"
                         width="44"
                         height="44"

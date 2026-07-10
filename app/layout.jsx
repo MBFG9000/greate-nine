@@ -1,10 +1,4 @@
-import Script from "next/script"
-
-import "../src/css/index.css"
-import "../src/css/App.css"
-import "../src/css/Navbar.css"
-import "../src/css/Footer.css"
-
+import DeferredGtm from "../src/components/DeferredGtm"
 import Footer from "../src/components/Footer"
 import JsonLd from "../src/components/JsonLd"
 import NavBar from "../src/components/NavBar"
@@ -20,7 +14,7 @@ export const metadata = {
     description:
         "Duron Construction строит частные дома и коммерческие объекты с прозрачным планированием, контролем качества и надежными сроками.",
     icons: {
-        icon: "/duron-construction-logo.svg",
+        icon: "/favicon.svg",
         apple: "/duron-construction-logo.png",
     },
     openGraph: {
@@ -77,33 +71,10 @@ export default function RootLayout({ children }) {
                     type="font/ttf"
                     crossOrigin="anonymous"
                 />
-                <link
-                    rel="preload"
-                    as="image"
-                    href="/duron-construction-hero-section-poster.webp"
-                    imageSrcSet="/duron-construction-hero-section-poster-960.webp 960w, /duron-construction-hero-section-poster.webp 1600w"
-                    imageSizes="100vw"
-                    type="image/webp"
-                    fetchPriority="high"
-                />
             </head>
             <body>
                 <JsonLd data={organizationSchema} />
-                <Script id="google-tag-manager" strategy="lazyOnload">
-                    {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KNDQPB56');`}
-                </Script>
-                <noscript>
-                    <iframe
-                        src="https://www.googletagmanager.com/ns.html?id=GTM-KNDQPB56"
-                        height="0"
-                        width="0"
-                        style={{ display: "none", visibility: "hidden" }}
-                    />
-                </noscript>
+                <DeferredGtm />
                 <div id="root">
                     <ScrollToTop />
                     <NavBar />
